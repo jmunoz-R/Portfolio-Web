@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lucía Marín Ortega · Biología computacional</title>
+<meta name="description" content="Portfolio de Lucía Marín Ortega, investigadora predoctoral en bioinformática y descubrimiento de fármacos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#080D18;--panel:#0F1626;--panel2:#131C30;--line:#1F2B45;--ink:#E9EDF6;--muted:#97A3BC;
+  --teal:#4FD1C5;--violet:#9A8CFF;--amber:#F2B84B;--rose:#F27591;
+  --serif:"Instrument Serif","Iowan Old Style",Georgia,serif;
+  --sans:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  box-sizing:border-box;color-scheme:dark;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px));height:100%}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:1.03rem;line-height:1.7;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+a{color:var(--teal);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.05;margin:0}
+p{margin:0 0 1em}
+.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--bg);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;gap:1.5rem;height:64px}
+.brand{font-family:var(--serif);font-size:1.45rem;color:var(--ink);text-decoration:none;white-space:nowrap}
+nav{margin-left:auto;display:flex;gap:.15rem;overflow-x:auto;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{color:var(--muted);text-decoration:none;padding:.4rem .8rem;border-radius:999px;font-size:.92rem;font-weight:500;white-space:nowrap}
+nav a:hover{color:var(--ink);background:var(--panel)}
+
+.hero{padding:clamp(2.5rem,7vw,5rem) 0 clamp(2rem,4vw,3rem)}
+.hero .wrap{display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+.hero h1{font-size:clamp(3.2rem,9vw,6.6rem);letter-spacing:-.02em}
+.role{font-family:var(--mono);font-size:.95rem;color:var(--teal);margin:1.4rem 0 1.2rem}
+.lead{max-width:35rem;color:var(--muted);font-size:1.15rem}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.8rem}
+.btn{display:inline-block;padding:.75rem 1.35rem;border-radius:999px;font-weight:600;font-size:.96rem;text-decoration:none;border:1px solid var(--line);color:var(--ink);transition:border-color .2s,background .2s}
+.btn:hover{border-color:var(--teal)}
+.btn.solid{background:var(--teal);border-color:var(--teal);color:#06231F}
+.btn.solid:hover{background:#7BE3D9}
+.helix{margin:0;justify-self:center;width:100%;max-width:230px}
+.helix svg{display:block;width:100%;height:auto;overflow:visible}
+.helix .s{fill:none;stroke:url(#g);stroke-width:3.5;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:0;animation:draw 2s ease-out backwards}
+.helix .r{animation:fade .6s ease-out backwards}
+.helix line{stroke-width:2;opacity:.8}
+.a{stroke:var(--teal);fill:var(--teal)}.t{stroke:var(--violet);fill:var(--violet)}
+.g{stroke:var(--amber);fill:var(--amber)}.c{stroke:var(--rose);fill:var(--rose)}
+@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+
+.seq{border-block:1px solid var(--line);padding:.9rem 0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.seq code{display:block;font-family:var(--mono);font-size:.8rem;color:var(--muted);margin-bottom:.35rem;padding-left:1.25rem}
+.seq div{font-family:var(--mono);font-size:1rem;letter-spacing:.55em;white-space:nowrap}
+.seq i{font-style:normal}
+.seq .a{color:var(--teal)}.seq .t{color:var(--violet)}.seq .g{color:var(--amber)}.seq .c{color:var(--rose)}
+
+section{padding:clamp(3.5rem,8vw,6rem) 0}
+section>.wrap>h2{font-size:clamp(2.3rem,5.5vw,3.6rem);margin-bottom:2.2rem}
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(2rem,5vw,4.5rem)}
+.about p{color:#C3CCE0}
+.about h3{font-family:var(--sans);font-size:.98rem;font-weight:700;margin-bottom:.8rem;color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;margin:0 0 1.8rem;padding:0}
+.chips li{padding:.3rem .8rem;border:1px solid var(--line);background:var(--panel);border-radius:8px;font-family:var(--mono);font-size:.82rem;color:#C3CCE0}
+
+.tl{list-style:none;margin:0;padding:0 0 0 1.9rem;border-left:1px solid var(--line)}
+.tl>li{position:relative;padding-bottom:2.4rem;--dot:var(--teal)}
+.tl>li:nth-child(2){--dot:var(--violet)}.tl>li:nth-child(3){--dot:var(--amber)}
+.tl>li:last-child{padding-bottom:0}
+.tl>li::before{content:"";position:absolute;left:calc(-1.9rem - 5px);top:.55rem;width:9px;height:9px;border-radius:50%;background:var(--dot);box-shadow:0 0 0 5px var(--bg)}
+.when{font-family:var(--mono);font-size:.82rem;color:var(--muted)}
+.tl h3{font-size:1.75rem;margin:.25rem 0 .1rem}
+.where{color:var(--dot);font-weight:600;margin-bottom:.5rem}
+.tl p,.tl ul{color:var(--muted);margin:0;max-width:44rem}
+.tl ul{padding-left:1.1rem}
+.tl ul li{padding:0 0 .3rem}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:1.6rem;display:flex;flex-direction:column;gap:.7rem}
+.card h3{font-size:1.65rem}
+.card p{color:var(--muted);margin:0;font-size:.98rem}
+.tags{margin:auto 0 0;padding:.6rem 0 0;display:flex;flex-wrap:wrap;gap:.35rem 1rem;list-style:none;font-family:var(--mono);font-size:.78rem;color:var(--teal)}
+.card.feature{grid-column:span 3;display:grid;grid-template-columns:1.2fr 1fr;gap:2.2rem;background:var(--panel2);border-radius:22px;padding:clamp(1.6rem,4vw,2.8rem)}
+.card.feature h3{font-size:clamp(2rem,4vw,2.9rem)}
+.card.feature p{font-size:1.05rem}
+.res{align-self:center;margin:0;padding:0;list-style:none;display:grid;gap:1.2rem}
+.res li{border-left:2px solid var(--teal);padding-left:1rem;color:var(--muted);font-size:.95rem}
+.res li:nth-child(2){border-color:var(--violet)}.res li:nth-child(3){border-color:var(--amber)}
+.res strong{display:block;font-family:var(--serif);font-weight:400;font-size:2.2rem;line-height:1.1;color:var(--ink)}
+.card.mid{grid-column:span 2}
+
+.pubs{list-style:none;margin:0;padding:0}
+.pubs li{display:grid;grid-template-columns:5rem 1fr;gap:1rem;padding:1.5rem 0;border-top:1px solid var(--line)}
+.pubs li:last-child{border-bottom:1px solid var(--line)}
+.yr{font-family:var(--serif);font-size:2rem;line-height:1;color:var(--violet)}
+.pubs h3{font-family:var(--sans);font-size:1.05rem;font-weight:600;line-height:1.45;margin-bottom:.3rem}
+.pubs p{margin:0;color:var(--muted);font-size:.95rem}
+.pubs em{color:#C3CCE0}
+
+.contact{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2rem;align-items:flex-end}
+.contact p{max-width:30rem;color:var(--muted);font-size:1.12rem;margin:0}
+.links{display:flex;flex-wrap:wrap;gap:.6rem}
+footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line)}
+
+@media (max-width:860px){
+  .hero .wrap,.about,.card.feature{grid-template-columns:1fr}
+  .helix{order:-1;max-width:110px}
+  .grid{grid-template-columns:1fr 1fr}
+  .card.feature,.card.mid{grid-column:span 2}
+}
+@media (max-width:560px){
+  .brand{font-size:1.25rem}
+  .grid{grid-template-columns:1fr}
+  .card.feature,.card.mid{grid-column:auto}
+  .pubs li{grid-template-columns:1fr;gap:.3rem}
+  nav a{padding:.4rem .6rem;font-size:.88rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .helix .s,.helix .r{animation:none}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio">Lucía Marín</a>
+    <nav aria-label="Secciones">
+      <a href="#perfil">Perfil</a>
+      <a href="#formacion">Formación</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#publicaciones">Publicaciones</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Lucía Marín Ortega</h1>
+        <p class="role">Biología computacional y drug discovery</p>
+        <p class="lead">Desarrollo modelos de aprendizaje automático y métodos de análisis genómico para encontrar dianas terapéuticas y priorizar moléculas candidatas antes de que lleguen al laboratorio.</p>
+        <div class="cta">
+          <a class="btn solid" href="#proyectos">Ver proyectos</a>
+          <a class="btn" href="#contacto">Escribirme</a>
+        </div>
+      </div>
+      <figure class="helix"><svg viewBox="0 0 220 560" role="img" aria-label="Ilustración de una doble hélice de ADN"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="560" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="var(--teal)"/><stop offset="1" stop-color="var(--violet)"/></linearGradient></defs><g class="r" style="animation-delay:0.05s"><line class="t" x1="139.1" y1="14" x2="110.0" y2="14"/><line class="a" x1="110.0" y1="14" x2="80.9" y2="14"/><circle class="t" cx="139.1" cy="14" r="5.1"/><circle class="a" cx="80.9" cy="14" r="2.1"/></g><g class="r" style="animation-delay:0.10s"><line class="g" x1="169.4" y1="32" x2="110.0" y2="32"/><line class="c" x1="110.0" y1="32" x2="50.6" y2="32"/><circle class="g" cx="169.4" cy="32" r="4.6"/><circle class="c" cx="50.6" cy="32" r="2.6"/></g><g class="r" style="animation-delay:0.16s"><line class="c" x1="184.9" y1="50" x2="110.0" y2="50"/><line class="g" x1="110.0" y1="50" x2="35.1" y2="50"/><circle class="c" cx="184.9" cy="50" r="3.9"/><circle class="g" cx="35.1" cy="50" r="3.3"/></g><g class="r" style="animation-delay:0.22s"><line class="a" x1="181.7" y1="68" x2="110.0" y2="68"/><line class="t" x1="110.0" y1="68" x2="38.3" y2="68"/><circle class="a" cx="181.7" cy="68" r="3.1"/><circle class="t" cx="38.3" cy="68" r="4.1"/></g><g class="r" style="animation-delay:0.28s"><line class="a" x1="160.6" y1="86" x2="110.0" y2="86"/><line class="t" x1="110.0" y1="86" x2="59.4" y2="86"/><circle class="a" cx="160.6" cy="86" r="2.4"/><circle class="t" cx="59.4" cy="86" r="4.8"/></g><g class="r" style="animation-delay:0.33s"><line class="a" x1="126.9" y1="104" x2="110.0" y2="104"/><line class="t" x1="110.0" y1="104" x2="93.1" y2="104"/><circle class="a" cx="126.9" cy="104" r="2.0"/><circle class="t" cx="93.1" cy="104" r="5.2"/></g><g class="r" style="animation-delay:0.39s"><line class="t" x1="89.0" y1="122" x2="110.0" y2="122"/><line class="a" x1="110.0" y1="122" x2="131.0" y2="122"/><circle class="t" cx="89.0" cy="122" r="2.1"/><circle class="a" cx="131.0" cy="122" r="5.1"/></g><g class="r" style="animation-delay:0.45s"><line class="a" x1="56.3" y1="140" x2="110.0" y2="140"/><line class="t" x1="110.0" y1="140" x2="163.7" y2="140"/><circle class="a" cx="56.3" cy="140" r="2.5"/><circle class="t" cx="163.7" cy="140" r="4.7"/></g><g class="r" style="animation-delay:0.51s"><line class="g" x1="37.0" y1="158" x2="110.0" y2="158"/><line class="c" x1="110.0" y1="158" x2="183.0" y2="158"/><circle class="g" cx="37.0" cy="158" r="3.2"/><circle class="c" cx="183.0" cy="158" r="4.0"/></g><g class="r" style="animation-delay:0.57s"><line class="a" x1="35.9" y1="176" x2="110.0" y2="176"/><line class="t" x1="110.0" y1="176" x2="184.1" y2="176"/><circle class="a" cx="35.9" cy="176" r="4.0"/><circle class="t" cx="184.1" cy="176" r="3.2"/></g><g class="r" style="animation-delay:0.62s"><line class="a" x1="53.3" y1="194" x2="110.0" y2="194"/><line class="t" x1="110.0" y1="194" x2="166.7" y2="194"/><circle class="a" cx="53.3" cy="194" r="4.7"/><circle class="t" cx="166.7" cy="194" r="2.5"/></g><g class="r" style="animation-delay:0.68s"><line class="c" x1="84.9" y1="212" x2="110.0" y2="212"/><line class="g" x1="110.0" y1="212" x2="135.1" y2="212"/><circle class="c" cx="84.9" cy="212" r="5.1"/><circle class="g" cx="135.1" cy="212" r="2.1"/></g><g class="r" style="animation-delay:0.74s"><line class="c" x1="122.7" y1="230" x2="110.0" y2="230"/><line class="g" x1="110.0" y1="230" x2="97.3" y2="230"/><circle class="c" cx="122.7" cy="230" r="5.2"/><circle class="g" cx="97.3" cy="230" r="2.0"/></g><g class="r" style="animation-delay:0.80s"><line class="a" x1="157.4" y1="248" x2="110.0" y2="248"/><line class="t" x1="110.0" y1="248" x2="62.6" y2="248"/><circle class="a" cx="157.4" cy="248" r="4.9"/><circle class="t" cx="62.6" cy="248" r="2.3"/></g><g class="r" style="animation-delay:0.85s"><line class="g" x1="180.2" y1="266" x2="110.0" y2="266"/><line class="c" x1="110.0" y1="266" x2="39.8" y2="266"/><circle class="g" cx="180.2" cy="266" r="4.2"/><circle class="c" cx="39.8" cy="266" r="3.0"/></g><g class="r" style="animation-delay:0.91s"><line class="a" x1="185.5" y1="284" x2="110.0" y2="284"/><line class="t" x1="110.0" y1="284" x2="34.5" y2="284"/><circle class="a" cx="185.5" cy="284" r="3.4"/><circle class="t" cx="34.5" cy="284" r="3.8"/></g><g class="r" style="animation-delay:0.97s"><line class="c" x1="172.0" y1="302" x2="110.0" y2="302"/><line class="g" x1="110.0" y1="302" x2="48.0" y2="302"/><circle class="c" cx="172.0" cy="302" r="2.7"/><circle class="g" cx="48.0" cy="302" r="4.5"/></g><g class="r" style="animation-delay:1.03s"><line class="a" x1="143.0" y1="320" x2="110.0" y2="320"/><line class="t" x1="110.0" y1="320" x2="77.0" y2="320"/><circle class="a" cx="143.0" cy="320" r="2.2"/><circle class="t" cx="77.0" cy="320" r="5.0"/></g><g class="r" style="animation-delay:1.09s"><line class="a" x1="105.7" y1="338" x2="110.0" y2="338"/><line class="t" x1="110.0" y1="338" x2="114.3" y2="338"/><circle class="a" cx="105.7" cy="338" r="2.0"/><circle class="t" cx="114.3" cy="338" r="5.2"/></g><g class="r" style="animation-delay:1.14s"><line class="g" x1="69.6" y1="356" x2="110.0" y2="356"/><line class="c" x1="110.0" y1="356" x2="150.4" y2="356"/><circle class="g" cx="69.6" cy="356" r="2.2"/><circle class="c" cx="150.4" cy="356" r="5.0"/></g><g class="r" style="animation-delay:1.20s"><line class="a" x1="43.5" y1="374" x2="110.0" y2="374"/><line class="t" x1="110.0" y1="374" x2="176.5" y2="374"/><circle class="a" cx="43.5" cy="374" r="2.8"/><circle class="t" cx="176.5" cy="374" r="4.4"/></g><g class="r" style="animation-delay:1.26s"><line class="c" x1="34.0" y1="392" x2="110.0" y2="392"/><line class="g" x1="110.0" y1="392" x2="186.0" y2="392"/><circle class="c" cx="34.0" cy="392" r="3.6"/><circle class="g" cx="186.0" cy="392" r="3.6"/></g><g class="r" style="animation-delay:1.32s"><line class="a" x1="43.5" y1="410" x2="110.0" y2="410"/><line class="t" x1="110.0" y1="410" x2="176.5" y2="410"/><circle class="a" cx="43.5" cy="410" r="4.4"/><circle class="t" cx="176.5" cy="410" r="2.8"/></g><g class="r" style="animation-delay:1.38s"><line class="g" x1="69.6" y1="428" x2="110.0" y2="428"/><line class="c" x1="110.0" y1="428" x2="150.4" y2="428"/><circle class="g" cx="69.6" cy="428" r="5.0"/><circle class="c" cx="150.4" cy="428" r="2.2"/></g><g class="r" style="animation-delay:1.43s"><line class="a" x1="105.7" y1="446" x2="110.0" y2="446"/><line class="t" x1="110.0" y1="446" x2="114.3" y2="446"/><circle class="a" cx="105.7" cy="446" r="5.2"/><circle class="t" cx="114.3" cy="446" r="2.0"/></g><g class="r" style="animation-delay:1.49s"><line class="g" x1="143.0" y1="464" x2="110.0" y2="464"/><line class="c" x1="110.0" y1="464" x2="77.0" y2="464"/><circle class="g" cx="143.0" cy="464" r="5.0"/><circle class="c" cx="77.0" cy="464" r="2.2"/></g><g class="r" style="animation-delay:1.55s"><line class="t" x1="172.0" y1="482" x2="110.0" y2="482"/><line class="a" x1="110.0" y1="482" x2="48.0" y2="482"/><circle class="t" cx="172.0" cy="482" r="4.5"/><circle class="a" cx="48.0" cy="482" r="2.7"/></g><g class="r" style="animation-delay:1.61s"><line class="c" x1="185.5" y1="500" x2="110.0" y2="500"/><line class="g" x1="110.0" y1="500" x2="34.5" y2="500"/><circle class="c" cx="185.5" cy="500" r="3.8"/><circle class="g" cx="34.5" cy="500" r="3.4"/></g><g class="r" style="animation-delay:1.67s"><line class="g" x1="180.2" y1="518" x2="110.0" y2="518"/><line class="c" x1="110.0" y1="518" x2="39.8" y2="518"/><circle class="g" cx="180.2" cy="518" r="3.0"/><circle class="c" cx="39.8" cy="518" r="4.2"/></g><g class="r" style="animation-delay:1.72s"><line class="a" x1="157.4" y1="536" x2="110.0" y2="536"/><line class="t" x1="110.0" y1="536" x2="62.6" y2="536"/><circle class="a" cx="157.4" cy="536" r="2.3"/><circle class="t" cx="62.6" cy="536" r="4.9"/></g><g class="r" style="animation-delay:1.78s"><line class="t" x1="122.7" y1="554" x2="110.0" y2="554"/><line class="a" x1="110.0" y1="554" x2="97.3" y2="554"/><circle class="t" cx="122.7" cy="554" r="2.0"/><circle class="a" cx="97.3" cy="554" r="5.2"/></g><polyline class="s" pathLength="1" points="110.0,0 120.6,5 131.0,10 141.0,15 150.4,20 159.0,25 166.7,30 173.2,35 178.5,40 182.4,45 184.9,50 186.0,55 185.5,60 183.6,65 180.2,70 175.5,75 169.4,80 162.2,85 154.0,90 144.9,95 135.1,100 124.8,105 114.3,110 103.6,115 93.1,120 82.9,125 73.2,130 64.3,135 56.3,140 49.3,145 43.5,150 39.0,155 35.9,160 34.3,165 34.1,170 35.5,175 38.3,180 42.5,185 48.0,190 54.8,195 62.6,200 71.4,205 80.9,210 91.0,215 101.5,220 112.1,225 122.7,230 133.1,235 143.0,240 152.2,245 160.6,250 168.1,255 174.4,260 179.4,265 183.0,270 185.3,275 186.0,280 185.3,285 183.0,290 179.4,295 174.4,300 168.1,305 160.6,310 152.2,315 143.0,320 133.1,325 122.7,330 112.1,335 101.5,340 91.0,345 80.9,350 71.4,355 62.6,360 54.8,365 48.0,370 42.5,375 38.3,380 35.5,385 34.1,390 34.3,395 35.9,400 39.0,405 43.5,410 49.3,415 56.3,420 64.3,425 73.2,430 82.9,435 93.1,440 103.6,445 114.3,450 124.8,455 135.1,460 144.9,465 154.0,470 162.2,475 169.4,480 175.5,485 180.2,490 183.6,495 185.5,500 186.0,505 184.9,510 182.4,515 178.5,520 173.2,525 166.7,530 159.0,535 150.4,540 141.0,545 131.0,550 120.6,555 110.0,560"/><polyline class="s" pathLength="1" points="110.0,0 99.4,5 89.0,10 79.0,15 69.6,20 61.0,25 53.3,30 46.8,35 41.5,40 37.6,45 35.1,50 34.0,55 34.5,60 36.4,65 39.8,70 44.5,75 50.6,80 57.8,85 66.0,90 75.1,95 84.9,100 95.2,105 105.7,110 116.4,115 126.9,120 137.1,125 146.8,130 155.7,135 163.7,140 170.7,145 176.5,150 181.0,155 184.1,160 185.7,165 185.9,170 184.5,175 181.7,180 177.5,185 172.0,190 165.2,195 157.4,200 148.6,205 139.1,210 129.0,215 118.5,220 107.9,225 97.3,230 86.9,235 77.0,240 67.8,245 59.4,250 51.9,255 45.6,260 40.6,265 37.0,270 34.7,275 34.0,280 34.7,285 37.0,290 40.6,295 45.6,300 51.9,305 59.4,310 67.8,315 77.0,320 86.9,325 97.3,330 107.9,335 118.5,340 129.0,345 139.1,350 148.6,355 157.4,360 165.2,365 172.0,370 177.5,375 181.7,380 184.5,385 185.9,390 185.7,395 184.1,400 181.0,405 176.5,410 170.7,415 163.7,420 155.7,425 146.8,430 137.1,435 126.9,440 116.4,445 105.7,450 95.2,455 84.9,460 75.1,465 66.0,470 57.8,475 50.6,480 44.5,485 39.8,490 36.4,495 34.5,500 34.0,505 35.1,510 37.6,515 41.5,520 46.8,525 53.3,530 61.0,535 69.6,540 79.0,545 89.0,550 99.4,555 110.0,560"/></svg></figure>
+    </div>
+  </div>
+
+  <div class="seq" aria-hidden="true">
+    <code>&gt;lucia_marin | cribado_virtual | 2026</code>
+    <div><i class="t">T</i><i class="a">A</i><i class="t">T</i><i class="g">G</i><i class="a">A</i><i class="a">A</i><i class="a">A</i><i class="t">T</i><i class="c">C</i><i class="c">C</i><i class="g">G</i><i class="c">C</i><i class="c">C</i><i class="g">G</i><i class="g">G</i><i class="t">T</i><i class="t">T</i><i class="t">T</i><i class="a">A</i><i class="g">G</i><i class="c">C</i><i class="g">G</i><i class="c">C</i><i class="g">G</i><i class="a">A</i><i class="a">A</i><i class="c">C</i><i class="t">T</i><i class="g">G</i><i class="t">T</i><i class="c">C</i><i class="c">C</i><i class="a">A</i><i class="a">A</i><i class="g">G</i><i class="g">G</i><i class="g">G</i><i class="c">C</i><i class="c">C</i><i class="a">A</i><i class="a">A</i><i class="g">G</i><i class="c">C</i><i class="a">A</i><i class="a">A</i><i class="g">G</i><i class="c">C</i><i class="g">G</i><i class="c">C</i><i class="g">G</i><i class="a">A</i><i class="c">C</i><i class="g">G</i><i class="t">T</i><i class="a">A</i><i class="c">C</i><i class="a">A</i><i class="t">T</i><i class="g">G</i><i class="t">T</i><i class="t">T</i><i class="c">C</i><i class="c">C</i><i class="c">C</i><i class="a">A</i><i class="t">T</i><i class="c">C</i><i class="c">C</i><i class="g">G</i><i class="t">T</i><i class="c">C</i><i class="g">G</i><i class="c">C</i><i class="g">G</i><i class="c">C</i><i class="t">T</i><i class="t">T</i><i class="a">A</i><i class="t">T</i><i class="t">T</i><i class="t">T</i><i class="t">T</i><i class="a">A</i><i class="c">C</i><i class="t">T</i><i class="g">G</i><i class="g">G</i><i class="a">A</i><i class="t">T</i><i class="c">C</i><i class="g">G</i><i class="g">G</i><i class="t">T</i><i class="a">A</i><i class="c">C</i><i class="c">C</i><i class="c">C</i><i class="c">C</i><i class="c">C</i><i class="a">A</i><i class="c">C</i><i class="c">C</i><i class="a">A</i><i class="t">T</i><i class="a">A</i><i class="t">T</i><i class="c">C</i><i class="t">T</i><i class="a">A</i><i class="g">G</i></div>
+  </div>
+
+  <section id="perfil">
+    <div class="wrap">
+      <h2>Perfil</h2>
+      <div class="about">
+        <div>
+          <p>Soy bioinformática y estoy en el segundo año de doctorado en biología computacional. Trabajo en el punto donde se cruzan los datos genómicos y el diseño de fármacos: uso la variación genética de pacientes para elegir dianas y modelos de aprendizaje profundo para predecir qué moléculas se unirán a ellas.</p>
+          <p>Me gusta que los métodos sean reproducibles y que otros puedan usarlos, así que publico mi código, documento mis flujos de trabajo y colaboro con equipos de química y de laboratorio.</p>
+        </div>
+        <div>
+          <h3>Líneas de investigación</h3>
+          <ul class="chips">
+            <li>Cribado virtual</li>
+            <li>Genómica de variantes</li>
+            <li>Aprendizaje profundo</li>
+            <li>Acoplamiento molecular</li>
+          </ul>
+          <h3>Herramientas</h3>
+          <ul class="chips">
+            <li>Python</li>
+            <li>PyTorch</li>
+            <li>RDKit</li>
+            <li>Nextflow</li>
+            <li>R</li>
+            <li>Docker</li>
+            <li>Inglés C1</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="formacion">
+    <div class="wrap">
+      <h2>Formación</h2>
+      <ol class="tl">
+        <li>
+          <span class="when">2025 – actualidad</span>
+          <h3>Doctorado en Biología Computacional</h3>
+          <div class="where">Instituto de Biociencias del Sur</div>
+          <p>Tesis sobre modelos de aprendizaje profundo para predecir la afinidad de moléculas pequeñas con dianas oncológicas. Beca predoctoral competitiva.</p>
+        </li>
+        <li>
+          <span class="when">2023 – 2024</span>
+          <h3>Máster en Bioinformática</h3>
+          <div class="where">Universidad del Sur</div>
+          <p>Nota media 9,3. Trabajo fin de máster sobre priorización de variantes genéticas con aprendizaje automático.</p>
+        </li>
+        <li>
+          <span class="when">2019 – 2023</span>
+          <h3>Grado en Biotecnología</h3>
+          <div class="where">Universidad del Sur</div>
+          <p>Premio extraordinario de grado. Estancia Erasmus de seis meses en Lisboa y especialización en programación científica.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="experiencia">
+    <div class="wrap">
+      <h2>Experiencia</h2>
+      <ol class="tl">
+        <li>
+          <span class="when">2025 – actualidad</span>
+          <h3>Investigadora predoctoral</h3>
+          <div class="where">Grupo de Genómica Computacional</div>
+          <ul>
+            <li>Entrenamiento y validación de modelos de predicción de afinidad sobre más de 2 millones de compuestos.</li>
+            <li>Mantenimiento de los flujos de trabajo de análisis del grupo en un clúster de computación.</li>
+            <li>Tutorización de dos estudiantes de máster.</li>
+          </ul>
+        </li>
+        <li>
+          <span class="when">2024</span>
+          <h3>Prácticas en descubrimiento de fármacos</h3>
+          <div class="where">Biotecnológica de terapias dirigidas</div>
+          <p>Seis meses en el equipo de química computacional: acoplamiento molecular, análisis de propiedades y selección de compuestos para ensayo.</p>
+        </li>
+        <li>
+          <span class="when">2022 – 2023</span>
+          <h3>Becaria de iniciación a la investigación</h3>
+          <div class="where">Unidad de Bioinformática</div>
+          <p>Análisis de datos de secuenciación de exoma y automatización de informes de variantes para el servicio de genómica.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="proyectos">
+    <div class="wrap">
+      <h2>Proyectos</h2>
+      <div class="grid">
+        <article class="card feature">
+          <div>
+            <h3>Cribado virtual de inhibidores de quinasas</h3>
+            <p>Proyecto central de mi tesis. Una red neuronal de grafos aprende a predecir qué moléculas se unen a una quinasa implicada en cáncer de mama, lo que reduce los ensayos de laboratorio necesarios para encontrar candidatos prometedores.</p>
+            <ul class="tags"><li>PyTorch</li><li>Grafos moleculares</li><li>RDKit</li></ul>
+          </div>
+          <ul class="res">
+            <li><strong>2,4 M</strong>compuestos cribados in silico</li>
+            <li><strong>0,91</strong>AUROC en validación externa</li>
+            <li><strong>12</strong>candidatos enviados a ensayo</li>
+          </ul>
+        </article>
+        <article class="card mid">
+          <h3>Flujo de variantes reproducible</h3>
+          <p>Pipeline en Nextflow que va de lecturas de secuenciación a variantes anotadas y priorizadas por impacto clínico. Se ejecuta igual en un portátil y en un clúster.</p>
+          <ul class="tags"><li>Nextflow</li><li>Docker</li><li>GATK</li></ul>
+        </article>
+        <article class="card">
+          <h3>Acoplamiento a gran escala</h3>
+          <p>Automatización de acoplamiento molecular con AlphaFold y AutoDock Vina.</p>
+          <ul class="tags"><li>Python</li><li>Vina</li></ul>
+        </article>
+        <article class="card">
+          <h3>Paquete molpath</h3>
+          <p>Biblioteca de Python de código abierto para conectar variantes genéticas con rutas y dianas farmacológicas.</p>
+          <ul class="tags"><li>Python</li><li>Código abierto</li></ul>
+        </article>
+        <article class="card mid">
+          <h3>Panel de expresión diferencial</h3>
+          <p>Aplicación web interactiva para explorar resultados de RNA-seq, con volcano plots, mapas de calor y enriquecimiento funcional, pensada para investigadores sin experiencia en programación.</p>
+          <ul class="tags"><li>R</li><li>Shiny</li><li>RNA-seq</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="publicaciones">
+    <div class="wrap">
+      <h2>Publicaciones</h2>
+      <ol class="pubs">
+        <li>
+          <span class="yr">2026</span>
+          <div>
+            <h3>Graph neural networks for kinase inhibitor screening with external validation</h3>
+            <p><strong>Marín-Ortega L.</strong>, Ramos P., Delgado A., Vidal J. <em>Journal of Computational Drug Discovery</em>, 7(2), 112–127. <a href="https://doi.org/">DOI</a></p>
+          </div>
+        </li>
+        <li>
+          <span class="yr">2025</span>
+          <div>
+            <h3>molpath: linking genetic variants to druggable pathways in Python</h3>
+            <p><strong>Marín-Ortega L.</strong>, Vidal J. <em>Bioinformatics Advances</em>, 5(1), vbaf014. Software en acceso abierto. <a href="https://doi.org/">DOI</a></p>
+          </div>
+        </li>
+        <li>
+          <span class="yr">2024</span>
+          <div>
+            <h3>Priorización de variantes patogénicas mediante aprendizaje automático</h3>
+            <p>Ramos P., <strong>Marín-Ortega L.</strong>, Soler M. <em>Revista de Genómica Clínica</em>, 21, 45–58. <a href="https://doi.org/">DOI</a></p>
+          </div>
+        </li>
+        <li>
+          <span class="yr">2023</span>
+          <div>
+            <h3>Premio a la mejor comunicación oral joven</h3>
+            <p>Congreso Nacional de Bioinformática, Sevilla. Presentación del trabajo de fin de grado.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="wrap">
+      <h2>Contacto</h2>
+      <div class="contact">
+        <p>Estoy abierta a colaboraciones, estancias de investigación y conversaciones con equipos de descubrimiento de fármacos. Escríbeme y respondo en pocos días.</p>
+        <div class="links">
+          <a class="btn solid" href="mailto:lucia.marin@ejemplo.org">lucia.marin@ejemplo.org</a>
+          <a class="btn" href="https://orcid.org/">ORCID</a>
+          <a class="btn" href="https://scholar.google.com/">Google Scholar</a>
+          <a class="btn" href="https://github.com/">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Lucía Marín Ortega. Todos los derechos reservados.</div>
+</footer>
+
+</body>
+</html>
