@@ -1,13 +1,16 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
+
+html
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
 <title>Jesús Manuel Muñoz Vázquez · Biología computacional</title>
-<meta name="description" content="Portfolio de Jesús Manuel Muñoz Vázquez, investigadora predoctoral en bioinformática y descubrimiento de fármacos.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta content="Portfolio de Jesús Manuel Muñoz Vázquez, graduado en Biología orientado a la bioinformática y el descubrimiento computacional de fármacos." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Manrope:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <style>
 :root{
   --bg:#080D18;--panel:#0F1626;--panel2:#131C30;--line:#1F2B45;--ink:#E9EDF6;--muted:#97A3BC;
@@ -126,275 +129,257 @@ footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem;border-top:1px 
   html{scroll-behavior:auto}
   .helix .s,.helix .r{animation:none}
 }
+
+/* Language selector */
+header.top .wrap{min-width:0}
+nav{min-width:0}
+.lang-switch{display:flex;align-items:center;gap:.22rem;flex-shrink:0;margin-left:.35rem;padding:.2rem;border:1px solid var(--line);border-radius:999px;background:var(--panel)}
+.lang-btn{appearance:none;border:0;background:transparent;color:var(--muted);font:600 .82rem var(--mono);padding:.38rem .55rem;border-radius:999px;cursor:pointer;transition:background .2s,color .2s}
+.lang-btn:hover{color:var(--ink)}
+.lang-btn.active{background:var(--teal);color:#06231F}
+.lang-separator{color:var(--muted);font-size:.75rem}
+.lang-btn:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+@media(max-width:860px){
+  header.top .wrap{gap:.6rem}
+  nav{flex:1;justify-content:flex-end}
+}
+@media(max-width:560px){
+  header.top .wrap{height:auto;min-height:64px;flex-wrap:wrap;padding-block:.45rem}
+  .brand{margin-right:auto}
+  nav{order:3;width:100%;flex:1 1 100%;margin:0;justify-content:flex-start;padding-bottom:.15rem}
+  .lang-switch{order:2;margin-left:auto}
+}
 </style>
 </head>
 <body>
-
 <header class="top">
-  <div class="wrap">
-    <a class="brand" href="#inicio">Jesús Manuel Muñoz Vázquez</a>
-    <nav aria-label="Secciones">
-      <a href="#perfil">Perfil</a>
-      <a href="#formacion">Formación</a>
-      <a href="#experiencia">Experiencia</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#publicaciones">Publicaciones</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </div>
+<div class="wrap">
+<a class="brand" data-i18n="brand" href="#inicio">Jesús Manuel Muñoz Vázquez</a>
+<nav aria-label="Secciones">
+<a data-i18n="nav_profile" href="#perfil">Perfil</a>
+<a data-i18n="nav_education" href="#formacion">Formación</a>
+<a data-i18n="nav_experience" href="#experiencia">Experiencia</a><a data-i18n="nav_courses" href="#cursos">Cursos</a>
+<a data-i18n="nav_projects" href="#proyectos">Proyectos</a>
+<a data-i18n="nav_contact" href="#contacto">Contacto</a>
+</nav><div aria-label="Select language" class="lang-switch" role="group"><button aria-pressed="true" class="lang-btn active" data-lang="es" type="button">ES</button><span aria-hidden="true" class="lang-separator">|</span><button aria-pressed="false" class="lang-btn" data-lang="en" type="button">EN</button></div>
+</div>
 </header>
-
 <main id="inicio">
-  <div class="hero">
-    <div class="wrap">
-      <div>
-        <h1>Jesús Manuel Muñoz Vázquez</h1>
-        <p class="role"> Biología | Bioinformática | Drug Design & Discovery</p>
-        <p class="lead">Soy graduado en Biología por la Universidad de Córdoba y estoy orientando mi formación hacia la bioinformática y la biología computacional. Me interesa aplicar herramientas computacionales al estudio de sistemas biológicos y al descubrimiento de nuevos compuestos terapéuticos así como terapias génicas.</p>
-        <p class="lead">Actualmente estoy desarrollando experiencia en el diseño computacional de fármacos, combinando conocimientos de biología molecular con metodologías de modelización y análisis estructural.</p>
-        <div class="cta">
-          <a class="btn solid" href="#proyectos">Ver proyectos</a>
-          <a class="btn" href="#contacto">Escríbeme</a>
-        </div>
-      </div>
-      <figure class="helix"><svg viewBox="0 0 220 560" role="img" aria-label="Ilustración de una doble hélice de ADN"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="560" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="var(--teal)"/><stop offset="1" stop-color="var(--violet)"/></linearGradient></defs><g class="r" style="animation-delay:0.05s"><line class="t" x1="139.1" y1="14" x2="110.0" y2="14"/><line class="a" x1="110.0" y1="14" x2="80.9" y2="14"/><circle class="t" cx="139.1" cy="14" r="5.1"/><circle class="a" cx="80.9" cy="14" r="2.1"/></g><g class="r" style="animation-delay:0.10s"><line class="g" x1="169.4" y1="32" x2="110.0" y2="32"/><line class="c" x1="110.0" y1="32" x2="50.6" y2="32"/><circle class="g" cx="169.4" cy="32" r="4.6"/><circle class="c" cx="50.6" cy="32" r="2.6"/></g><g class="r" style="animation-delay:0.16s"><line class="c" x1="184.9" y1="50" x2="110.0" y2="50"/><line class="g" x1="110.0" y1="50" x2="35.1" y2="50"/><circle class="c" cx="184.9" cy="50" r="3.9"/><circle class="g" cx="35.1" cy="50" r="3.3"/></g><g class="r" style="animation-delay:0.22s"><line class="a" x1="181.7" y1="68" x2="110.0" y2="68"/><line class="t" x1="110.0" y1="68" x2="38.3" y2="68"/><circle class="a" cx="181.7" cy="68" r="3.1"/><circle class="t" cx="38.3" cy="68" r="4.1"/></g><g class="r" style="animation-delay:0.28s"><line class="a" x1="160.6" y1="86" x2="110.0" y2="86"/><line class="t" x1="110.0" y1="86" x2="59.4" y2="86"/><circle class="a" cx="160.6" cy="86" r="2.4"/><circle class="t" cx="59.4" cy="86" r="4.8"/></g><g class="r" style="animation-delay:0.33s"><line class="a" x1="126.9" y1="104" x2="110.0" y2="104"/><line class="t" x1="110.0" y1="104" x2="93.1" y2="104"/><circle class="a" cx="126.9" cy="104" r="2.0"/><circle class="t" cx="93.1" cy="104" r="5.2"/></g><g class="r" style="animation-delay:0.39s"><line class="t" x1="89.0" y1="122" x2="110.0" y2="122"/><line class="a" x1="110.0" y1="122" x2="131.0" y2="122"/><circle class="t" cx="89.0" cy="122" r="2.1"/><circle class="a" cx="131.0" cy="122" r="5.1"/></g><g class="r" style="animation-delay:0.45s"><line class="a" x1="56.3" y1="140" x2="110.0" y2="140"/><line class="t" x1="110.0" y1="140" x2="163.7" y2="140"/><circle class="a" cx="56.3" cy="140" r="2.5"/><circle class="t" cx="163.7" cy="140" r="4.7"/></g><g class="r" style="animation-delay:0.51s"><line class="g" x1="37.0" y1="158" x2="110.0" y2="158"/><line class="c" x1="110.0" y1="158" x2="183.0" y2="158"/><circle class="g" cx="37.0" cy="158" r="3.2"/><circle class="c" cx="183.0" cy="158" r="4.0"/></g><g class="r" style="animation-delay:0.57s"><line class="a" x1="35.9" y1="176" x2="110.0" y2="176"/><line class="t" x1="110.0" y1="176" x2="184.1" y2="176"/><circle class="a" cx="35.9" cy="176" r="4.0"/><circle class="t" cx="184.1" cy="176" r="3.2"/></g><g class="r" style="animation-delay:0.62s"><line class="a" x1="53.3" y1="194" x2="110.0" y2="194"/><line class="t" x1="110.0" y1="194" x2="166.7" y2="194"/><circle class="a" cx="53.3" cy="194" r="4.7"/><circle class="t" cx="166.7" cy="194" r="2.5"/></g><g class="r" style="animation-delay:0.68s"><line class="c" x1="84.9" y1="212" x2="110.0" y2="212"/><line class="g" x1="110.0" y1="212" x2="135.1" y2="212"/><circle class="c" cx="84.9" cy="212" r="5.1"/><circle class="g" cx="135.1" cy="212" r="2.1"/></g><g class="r" style="animation-delay:0.74s"><line class="c" x1="122.7" y1="230" x2="110.0" y2="230"/><line class="g" x1="110.0" y1="230" x2="97.3" y2="230"/><circle class="c" cx="122.7" cy="230" r="5.2"/><circle class="g" cx="97.3" cy="230" r="2.0"/></g><g class="r" style="animation-delay:0.80s"><line class="a" x1="157.4" y1="248" x2="110.0" y2="248"/><line class="t" x1="110.0" y1="248" x2="62.6" y2="248"/><circle class="a" cx="157.4" cy="248" r="4.9"/><circle class="t" cx="62.6" cy="248" r="2.3"/></g><g class="r" style="animation-delay:0.85s"><line class="g" x1="180.2" y1="266" x2="110.0" y2="266"/><line class="c" x1="110.0" y1="266" x2="39.8" y2="266"/><circle class="g" cx="180.2" cy="266" r="4.2"/><circle class="c" cx="39.8" cy="266" r="3.0"/></g><g class="r" style="animation-delay:0.91s"><line class="a" x1="185.5" y1="284" x2="110.0" y2="284"/><line class="t" x1="110.0" y1="284" x2="34.5" y2="284"/><circle class="a" cx="185.5" cy="284" r="3.4"/><circle class="t" cx="34.5" cy="284" r="3.8"/></g><g class="r" style="animation-delay:0.97s"><line class="c" x1="172.0" y1="302" x2="110.0" y2="302"/><line class="g" x1="110.0" y1="302" x2="48.0" y2="302"/><circle class="c" cx="172.0" cy="302" r="2.7"/><circle class="g" cx="48.0" cy="302" r="4.5"/></g><g class="r" style="animation-delay:1.03s"><line class="a" x1="143.0" y1="320" x2="110.0" y2="320"/><line class="t" x1="110.0" y1="320" x2="77.0" y2="320"/><circle class="a" cx="143.0" cy="320" r="2.2"/><circle class="t" cx="77.0" cy="320" r="5.0"/></g><g class="r" style="animation-delay:1.09s"><line class="a" x1="105.7" y1="338" x2="110.0" y2="338"/><line class="t" x1="110.0" y1="338" x2="114.3" y2="338"/><circle class="a" cx="105.7" cy="338" r="2.0"/><circle class="t" cx="114.3" cy="338" r="5.2"/></g><g class="r" style="animation-delay:1.14s"><line class="g" x1="69.6" y1="356" x2="110.0" y2="356"/><line class="c" x1="110.0" y1="356" x2="150.4" y2="356"/><circle class="g" cx="69.6" cy="356" r="2.2"/><circle class="c" cx="150.4" cy="356" r="5.0"/></g><g class="r" style="animation-delay:1.20s"><line class="a" x1="43.5" y1="374" x2="110.0" y2="374"/><line class="t" x1="110.0" y1="374" x2="176.5" y2="374"/><circle class="a" cx="43.5" cy="374" r="2.8"/><circle class="t" cx="176.5" cy="374" r="4.4"/></g><g class="r" style="animation-delay:1.26s"><line class="c" x1="34.0" y1="392" x2="110.0" y2="392"/><line class="g" x1="110.0" y1="392" x2="186.0" y2="392"/><circle class="c" cx="34.0" cy="392" r="3.6"/><circle class="g" cx="186.0" cy="392" r="3.6"/></g><g class="r" style="animation-delay:1.32s"><line class="a" x1="43.5" y1="410" x2="110.0" y2="410"/><line class="t" x1="110.0" y1="410" x2="176.5" y2="410"/><circle class="a" cx="43.5" cy="410" r="4.4"/><circle class="t" cx="176.5" cy="410" r="2.8"/></g><g class="r" style="animation-delay:1.38s"><line class="g" x1="69.6" y1="428" x2="110.0" y2="428"/><line class="c" x1="110.0" y1="428" x2="150.4" y2="428"/><circle class="g" cx="69.6" cy="428" r="5.0"/><circle class="c" cx="150.4" cy="428" r="2.2"/></g><g class="r" style="animation-delay:1.43s"><line class="a" x1="105.7" y1="446" x2="110.0" y2="446"/><line class="t" x1="110.0" y1="446" x2="114.3" y2="446"/><circle class="a" cx="105.7" cy="446" r="5.2"/><circle class="t" cx="114.3" cy="446" r="2.0"/></g><g class="r" style="animation-delay:1.49s"><line class="g" x1="143.0" y1="464" x2="110.0" y2="464"/><line class="c" x1="110.0" y1="464" x2="77.0" y2="464"/><circle class="g" cx="143.0" cy="464" r="5.0"/><circle class="c" cx="77.0" cy="464" r="2.2"/></g><g class="r" style="animation-delay:1.55s"><line class="t" x1="172.0" y1="482" x2="110.0" y2="482"/><line class="a" x1="110.0" y1="482" x2="48.0" y2="482"/><circle class="t" cx="172.0" cy="482" r="4.5"/><circle class="a" cx="48.0" cy="482" r="2.7"/></g><g class="r" style="animation-delay:1.61s"><line class="c" x1="185.5" y1="500" x2="110.0" y2="500"/><line class="g" x1="110.0" y1="500" x2="34.5" y2="500"/><circle class="c" cx="185.5" cy="500" r="3.8"/><circle class="g" cx="34.5" cy="500" r="3.4"/></g><g class="r" style="animation-delay:1.67s"><line class="g" x1="180.2" y1="518" x2="110.0" y2="518"/><line class="c" x1="110.0" y1="518" x2="39.8" y2="518"/><circle class="g" cx="180.2" cy="518" r="3.0"/><circle class="c" cx="39.8" cy="518" r="4.2"/></g><g class="r" style="animation-delay:1.72s"><line class="a" x1="157.4" y1="536" x2="110.0" y2="536"/><line class="t" x1="110.0" y1="536" x2="62.6" y2="536"/><circle class="a" cx="157.4" cy="536" r="2.3"/><circle class="t" cx="62.6" cy="536" r="4.9"/></g><g class="r" style="animation-delay:1.78s"><line class="t" x1="122.7" y1="554" x2="110.0" y2="554"/><line class="a" x1="110.0" y1="554" x2="97.3" y2="554"/><circle class="t" cx="122.7" cy="554" r="2.0"/><circle class="a" cx="97.3" cy="554" r="5.2"/></g><polyline class="s" pathLength="1" points="110.0,0 120.6,5 131.0,10 141.0,15 150.4,20 159.0,25 166.7,30 173.2,35 178.5,40 182.4,45 184.9,50 186.0,55 185.5,60 183.6,65 180.2,70 175.5,75 169.4,80 162.2,85 154.0,90 144.9,95 135.1,100 124.8,105 114.3,110 103.6,115 93.1,120 82.9,125 73.2,130 64.3,135 56.3,140 49.3,145 43.5,150 39.0,155 35.9,160 34.3,165 34.1,170 35.5,175 38.3,180 42.5,185 48.0,190 54.8,195 62.6,200 71.4,205 80.9,210 91.0,215 101.5,220 112.1,225 122.7,230 133.1,235 143.0,240 152.2,245 160.6,250 168.1,255 174.4,260 179.4,265 183.0,270 185.3,275 186.0,280 185.3,285 183.0,290 179.4,295 174.4,300 168.1,305 160.6,310 152.2,315 143.0,320 133.1,325 122.7,330 112.1,335 101.5,340 91.0,345 80.9,350 71.4,355 62.6,360 54.8,365 48.0,370 42.5,375 38.3,380 35.5,385 34.1,390 34.3,395 35.9,400 39.0,405 43.5,410 49.3,415 56.3,420 64.3,425 73.2,430 82.9,435 93.1,440 103.6,445 114.3,450 124.8,455 135.1,460 144.9,465 154.0,470 162.2,475 169.4,480 175.5,485 180.2,490 183.6,495 185.5,500 186.0,505 184.9,510 182.4,515 178.5,520 173.2,525 166.7,530 159.0,535 150.4,540 141.0,545 131.0,550 120.6,555 110.0,560"/><polyline class="s" pathLength="1" points="110.0,0 99.4,5 89.0,10 79.0,15 69.6,20 61.0,25 53.3,30 46.8,35 41.5,40 37.6,45 35.1,50 34.0,55 34.5,60 36.4,65 39.8,70 44.5,75 50.6,80 57.8,85 66.0,90 75.1,95 84.9,100 95.2,105 105.7,110 116.4,115 126.9,120 137.1,125 146.8,130 155.7,135 163.7,140 170.7,145 176.5,150 181.0,155 184.1,160 185.7,165 185.9,170 184.5,175 181.7,180 177.5,185 172.0,190 165.2,195 157.4,200 148.6,205 139.1,210 129.0,215 118.5,220 107.9,225 97.3,230 86.9,235 77.0,240 67.8,245 59.4,250 51.9,255 45.6,260 40.6,265 37.0,270 34.7,275 34.0,280 34.7,285 37.0,290 40.6,295 45.6,300 51.9,305 59.4,310 67.8,315 77.0,320 86.9,325 97.3,330 107.9,335 118.5,340 129.0,345 139.1,350 148.6,355 157.4,360 165.2,365 172.0,370 177.5,375 181.7,380 184.5,385 185.9,390 185.7,395 184.1,400 181.0,405 176.5,410 170.7,415 163.7,420 155.7,425 146.8,430 137.1,435 126.9,440 116.4,445 105.7,450 95.2,455 84.9,460 75.1,465 66.0,470 57.8,475 50.6,480 44.5,485 39.8,490 36.4,495 34.5,500 34.0,505 35.1,510 37.6,515 41.5,520 46.8,525 53.3,530 61.0,535 69.6,540 79.0,545 89.0,550 99.4,555 110.0,560"/></svg></figure>
-    </div>
-  </div>
-
-  <div class="seq" aria-hidden="true">
-    <code>&gt;jesus_m_munoz | bioinformatica | 2026</code>
-    <div><i class="t">T</i><i class="a">A</i><i class="t">T</i><i class="g">G</i><i class="a">A</i><i class="a">A</i><i class="a">A</i><i class="t">T</i><i class="c">C</i><i class="c">C</i><i class="g">G</i><i class="c">C</i><i class="c">C</i><i class="g">G</i><i class="g">G</i><i class="t">T</i><i class="t">T</i><i class="t">T</i><i class="a">A</i><i class="g">G</i><i class="c">C</i><i class="g">G</i><i class="c">C</i><i class="g">G</i><i class="a">A</i><i class="a">A</i><i class="c">C</i><i class="t">T</i><i class="g">G</i><i class="t">T</i><i class="c">C</i><i class="c">C</i><i class="a">A</i><i class="a">A</i><i class="g">G</i><i class="g">G</i><i class="g">G</i><i class="c">C</i><i class="c">C</i><i class="a">A</i><i class="a">A</i><i class="g">G</i><i class="c">C</i><i class="a">A</i><i class="a">A</i><i class="g">G</i><i class="c">C</i><i class="g">G</i><i class="c">C</i><i class="g">G</i><i class="a">A</i><i class="c">C</i><i class="g">G</i><i class="t">T</i><i class="a">A</i><i class="c">C</i><i class="a">A</i><i class="t">T</i><i class="g">G</i><i class="t">T</i><i class="t">T</i><i class="c">C</i><i class="c">C</i><i class="c">C</i><i class="a">A</i><i class="t">T</i><i class="c">C</i><i class="c">C</i><i class="g">G</i><i class="t">T</i><i class="c">C</i><i class="g">G</i><i class="c">C</i><i class="g">G</i><i class="c">C</i><i class="t">T</i><i class="t">T</i><i class="a">A</i><i class="t">T</i><i class="t">T</i><i class="t">T</i><i class="t">T</i><i class="a">A</i><i class="c">C</i><i class="t">T</i><i class="g">G</i><i class="g">G</i><i class="a">A</i><i class="t">T</i><i class="c">C</i><i class="g">G</i><i class="g">G</i><i class="t">T</i><i class="a">A</i><i class="c">C</i><i class="c">C</i><i class="c">C</i><i class="c">C</i><i class="c">C</i><i class="a">A</i><i class="c">C</i><i class="c">C</i><i class="a">A</i><i class="t">T</i><i class="a">A</i><i class="t">T</i><i class="c">C</i><i class="t">T</i><i class="a">A</i><i class="g">G</i></div>
-  </div>
-
-  <section id="perfil">
-    <div class="wrap">
-      <h2>Perfil</h2>
-      <div class="about">
-        <div>
-          <p>Soy graduado en Biología por la Universidad de Córdoba y estoy orientando mi formación hacia la bioinformática y la biología computacional. Me interesa aplicar herramientas de análisis computacional a preguntas de  investigación biológica y al descubrimiento de nuevos compuestos terapéuticos.
-          <p>He ampliado mi formación con cursos de programación y bioinformática, así como una formación de diseño computacional de fármacos centrada en inhibidores de DprE1 de <em>Mycobacterium tuberculosis</em>.</p>
-        </div>
-        <div>
-          <h3>Áreas de interés</h3>
-          <ul class="chips">
-            <li>Bioinformática</li>
-            <li>Biología Computacional</li>
-            <li>Drug Design & Discovery</li>
-            <li>Análisis de datos biológicos</li>
-          </ul>
-          <h3>Herramientas</h3>
-          <ul class="chips">
-            <li>Python</li>
-            <li>R</li>
-            <li>Linux / Bash</li>
-            <li>Geneious</li>
-            <li>SkyLine</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="formacion">
-    <div class="wrap">
-      <h2>Formación</h2>
-      <ol class="tl">
-        <li>
-          <span class="when">Actualidad</span>
-          <h3>Máster en Biotecnología</h3>
-          <div class="where">Universidad de Córdoba</div>
-          <p>Trabajo Fin de Máster titulado: Identificación y caracterización de péptidos bioactivos en alimentos mediante análisis computacionales.</p>
-        </li>
-        <li>
-          <span class="when">Grado Universitario</span>
-          <h3>Grado en Biología</h3>
-          <div class="where">Universidad de Córdoba</div>
-          <p>Asignaturas relevantes: Computación, Interpretación y Presentación de Datos en Biología; Ingeniería Genética; Estadística; Biotecnología Básica, Bioquímica Enzimática y Bioquímica Metabólica.</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <section id="experiencia">
-    <div class="wrap">
-      <h2>Experiencia</h2>
-      <ol class="tl">
-        <li>
-          <span class="when">2024</span>
-          <h3>Prácticas Extracurriculares</h3>
-          <div class="where">Ethnophytotech Research & Consulting      3 meses</div>
-          <ul>
-          <p>Fui seleccionado mediante un programa competitivo de prácticas, incluyendo entrevista personal.</p>
-            <li>HPLC</li>
-            <li>TLC</li>
-            <li>Cromatografía Gases-Masas</li>
-            <li>Extracción de compuestos bioactivos</li>
-            <li>Caracterización y optimización de métodos de purificación de compuestos bioactivos</li>
-          </ul>
-        </li>
-        <li>
-          <span class="when">2023</span>
-          <h3>Prácticas Curriculares</h3>
-          <div class="where">Instituto de Agricultura Sostenible (IAS) CSIC      3 meses</div>
-          <ul>
-            <li>Mejora genética vegetal</li>
-            <li>Mantenimiento de los flujos de trabajo de análisis del grupo en un clúster de computación.</li>
-            <li>Tutorización de dos estudiantes de máster.</li>
-          </ul>
-        </li>
-        <li>
-          <span class="when">2024-2025</span>
-          <h3>Alumno colaborador</h3>
-          <div class="where">Departamento de Bioquímica y Biología Molecular 7 meses</div>
-          <p>Apoyo a ensayos de biología molecular y análisis bioquímico.</p>
-        </li>
-        <li>
-          <span class="when">2023 – 2024</span>
-          <h3>Alumno colaborador</h3>
-          <div class="where">Departamento de Fisiología Vegetal 7 meses</div>
-          <p>Apoyo a ensayos de biofertilizantes y fisiología vegetal.</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-  
-  <section id="cursos complementarios">
-    <div class="wrap">
-      <h2>Cursos Complementarios</h2>
-      <ol class="tl">
-        <li>
-          <span class="when">2026</span>
-          <h3>Drug Discovery Research Internship | OmicsBoard</h3>
-          <div class="where">Genomac</div>
-          <ul>
-          <p> RELLENAR O ELIMINAR ESTE APARTADO</p>
-            <li>Aproximaciones computacionales en Drug discovery and Development.</li>
-            <li>Estudio de la diana terapéutica DprE1 en <em>Mycobacterium tuberculosis</em></li>
-            <li>Exploración de estrategias computacionales para la identifiación y evaluación de posibles inhibidores.</li>
-            <li>Aplicación de conceptos estructurales y moleculares en un proyecto de Drug discovery.</li>
-          </ul>
-        </li>
-        <li>
-          <span class="when">2026</span>
-          <h3>Introducción a Python | Code in Place</h3>
-          <div class="where">Standford University</div>
-          <ul>
-          <p> RELLENAR O ELIMINAR ESTE APARTADO</p>
-            <li>Fundamentos de programación en Python y pensamiento computacional.</li>
-            <li>Uso de variables, data types, condicionales y bucles.</li>
-            <li>Funciones, código modular y estrategias de resolución de problemas.</li>
-            <li>Desarrollo de pensamiento lógico a través de ejercicios de programación prácticos.</li>
-          </ul>
-        </li>
-        <li>
-          <span class="when">2026</span>
-          <h3>Introduction to Bioinformatics</h3>
-          <div class="where">BioCode Innovators</div>
-          <ul>
-          <p> RELLENAR O ELIMINAR ESTE APARTADO</p>
-            <li>Aproximaciones computacionales para el análisis de datos biológicos.</li>
-            <li>Exploración de recursos bioinformáticos y bases de datos biológicas.</li>
-            <li>Fundamentos del análisis de secuencias biológicas.</li>
-            <li>Aplicación de herramientas computacionales a preguntas biológicas de investigación.</li>
-          </ul>
-        </li>
-      </ol>
-    </div>
-  </section>
-  <section id="proyectos">
-    <div class="wrap">
-      <h2>Proyectos</h2>
-      <div class="grid">
-        <article class="card feature">
-          <div>
-            <h3>Trabajo de Fin de Grado</h3>
-            <p>Efecto del transgén <em>FaNPR3.2</em> <p>en el perfil de expresión de genes de defensa de <em>Arabidopsis</em> WT y doble mutante. El trabajo estudió el efecto del gen <em>FaNPR3.2</em> de fresa sobre la expresión de sus ortólogos (<em>Atnp3/Atnpr4</em>) en <em>Arabidopsis thaliana</em>. </p></p>
-            <ul class="tags"><li>Biología Molecular</li><li>Expresión Génica</li><li>qRT-PCR</li><li>Extracción de Ácidos Nucleicos</li><li>Electroforesis 1D</li><li>Espectrofotometría</li></ul>
-          </div>
-          <ul class="res">
-            <li><strong>8</strong>genes analizados</li>
-            <li><strong>0,91</strong>AUROC en validación externa</li>
-            <li><strong>12</strong>candidatos enviados a ensayo</li>
-          </ul>
-        </article>
-        <article class="card mid">
-          <h3>Estudio de inhibidores de DprE1 de <em>Mycobacterium tuberculosis</em></h3>
-          <p> Proyecto desarrollado durante las prácticas de diseño computacional de fármacos en Genomac, centrado en inhibidores de la diana Dpr1 de <em>Mycobacterium tuberculosis</em>.</p>
-          <ul class="tags"><li>Drug Discovery</li><li>DprE1</li><li>Drug Design</li></ul>
-        </article>
-        <article class="card">
-          <h3>Acoplamiento a gran escala</h3>
-          <p>Automatización de acoplamiento molecular con AlphaFold y AutoDock Vina.</p>
-          <ul class="tags"><li>Python</li><li>Vina</li></ul>
-        </article>
-        <article class="card">
-          <h3>Paquete molpath</h3>
-          <p>Biblioteca de Python de código abierto para conectar variantes genéticas con rutas y dianas farmacológicas.</p>
-          <ul class="tags"><li>Python</li><li>Código abierto</li></ul>
-        </article>
-        <article class="card mid">
-          <h3>Panel de expresión diferencial</h3>
-          <p>Aplicación web interactiva para explorar resultados de RNA-seq, con volcano plots, mapas de calor y enriquecimiento funcional, pensada para investigadores sin experiencia en programación.</p>
-          <ul class="tags"><li>R</li><li>Shiny</li><li>RNA-seq</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
- <!-- <section id="publicaciones">
-    <div class="wrap">
-      <h2>Publicaciones</h2>
-      <ol class="pubs">
-        <li>
-          <span class="yr">2026</span>
-          <div>
-            <h3>Graph neural networks for kinase inhibitor screening with external validation</h3>
-            <p><strong>Marín-Ortega L.</strong>, Ramos P., Delgado A., Vidal J. <em>Journal of Computational Drug Discovery</em>, 7(2), 112–127. <a href="https://doi.org/">DOI</a></p>
-          </div>
-        </li>
-        <li>
-          <span class="yr">2025</span>
-          <div>
-            <h3>molpath: linking genetic variants to druggable pathways in Python</h3>
-            <p><strong>Marín-Ortega L.</strong>, Vidal J. <em>Bioinformatics Advances</em>, 5(1), vbaf014. Software en acceso abierto. <a href="https://doi.org/">DOI</a></p>
-          </div>
-        </li>
-        <li>
-          <span class="yr">2024</span>
-          <div>
-            <h3>Priorización de variantes patogénicas mediante aprendizaje automático</h3>
-            <p>Ramos P., <strong>Marín-Ortega L.</strong>, Soler M. <em>Revista de Genómica Clínica</em>, 21, 45–58. <a href="https://doi.org/">DOI</a></p>
-          </div>
-        </li>
-        <li>
-          <span class="yr">2023</span>
-          <div>
-            <h3>Premio a la mejor comunicación oral joven</h3>
-            <p>Congreso Nacional de Bioinformática, Sevilla. Presentación del trabajo de fin de grado.</p>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </section> -->
-
-  <section id="contacto">
-    <div class="wrap">
-      <h2>Contacto</h2>
-      <div class="contact">
-        <p>Estoy abierto a colaboraciones, estancias de investigación y conversaciones con equipos de descubrimiento de fármacos. Escríbeme y respondo a más tardar en tres días.</p>
-        <div class="links">
-          <a class="btn solid" href="mailto:jmmvazquez122@gmail.com">jmmvazquez122@gmail.com</a>
-          <a class="btn" href="https://github.com/jmunoz-R">GitHub</a>
-          <a class="btn" href="https://www.linkedin.com/in/jesusmmunoz-bio-data/">LinkedIn</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<div class="hero">
+<div class="wrap">
+<div>
+<h1>Jesús Manuel Muñoz Vázquez</h1>
+<p class="role" data-i18n="hero_role"> Biología | Bioinformática | Drug Design &amp; Discovery</p>
+<p class="lead" data-i18n="hero_lead_1">Soy graduado en Biología por la Universidad de Córdoba y estoy orientando mi formación hacia la bioinformática y la biología computacional. Me interesa aplicar herramientas computacionales al estudio de sistemas biológicos y al descubrimiento de nuevos compuestos terapéuticos así como terapias génicas.</p>
+<p class="lead" data-i18n="hero_lead_2">Actualmente estoy desarrollando experiencia en el diseño computacional de fármacos, combinando conocimientos de biología molecular con metodologías de modelización y análisis estructural.</p>
+<div class="cta">
+<a class="btn solid" data-i18n="hero_projects" href="#proyectos">Ver proyectos</a>
+<a class="btn" data-i18n="hero_contact" href="#contacto">Escríbeme</a>
+</div>
+</div>
+<figure class="helix"><svg aria-label="Ilustración de una doble hélice de ADN" role="img" viewbox="0 0 220 560"><defs><lineargradient gradientunits="userSpaceOnUse" id="g" x1="0" x2="0" y1="0" y2="560"><stop offset="0" stop-color="var(--teal)"></stop><stop offset="1" stop-color="var(--violet)"></stop></lineargradient></defs><g class="r" style="animation-delay:0.05s"><line class="t" x1="139.1" x2="110.0" y1="14" y2="14"></line><line class="a" x1="110.0" x2="80.9" y1="14" y2="14"></line><circle class="t" cx="139.1" cy="14" r="5.1"></circle><circle class="a" cx="80.9" cy="14" r="2.1"></circle></g><g class="r" style="animation-delay:0.10s"><line class="g" x1="169.4" x2="110.0" y1="32" y2="32"></line><line class="c" x1="110.0" x2="50.6" y1="32" y2="32"></line><circle class="g" cx="169.4" cy="32" r="4.6"></circle><circle class="c" cx="50.6" cy="32" r="2.6"></circle></g><g class="r" style="animation-delay:0.16s"><line class="c" x1="184.9" x2="110.0" y1="50" y2="50"></line><line class="g" x1="110.0" x2="35.1" y1="50" y2="50"></line><circle class="c" cx="184.9" cy="50" r="3.9"></circle><circle class="g" cx="35.1" cy="50" r="3.3"></circle></g><g class="r" style="animation-delay:0.22s"><line class="a" x1="181.7" x2="110.0" y1="68" y2="68"></line><line class="t" x1="110.0" x2="38.3" y1="68" y2="68"></line><circle class="a" cx="181.7" cy="68" r="3.1"></circle><circle class="t" cx="38.3" cy="68" r="4.1"></circle></g><g class="r" style="animation-delay:0.28s"><line class="a" x1="160.6" x2="110.0" y1="86" y2="86"></line><line class="t" x1="110.0" x2="59.4" y1="86" y2="86"></line><circle class="a" cx="160.6" cy="86" r="2.4"></circle><circle class="t" cx="59.4" cy="86" r="4.8"></circle></g><g class="r" style="animation-delay:0.33s"><line class="a" x1="126.9" x2="110.0" y1="104" y2="104"></line><line class="t" x1="110.0" x2="93.1" y1="104" y2="104"></line><circle class="a" cx="126.9" cy="104" r="2.0"></circle><circle class="t" cx="93.1" cy="104" r="5.2"></circle></g><g class="r" style="animation-delay:0.39s"><line class="t" x1="89.0" x2="110.0" y1="122" y2="122"></line><line class="a" x1="110.0" x2="131.0" y1="122" y2="122"></line><circle class="t" cx="89.0" cy="122" r="2.1"></circle><circle class="a" cx="131.0" cy="122" r="5.1"></circle></g><g class="r" style="animation-delay:0.45s"><line class="a" x1="56.3" x2="110.0" y1="140" y2="140"></line><line class="t" x1="110.0" x2="163.7" y1="140" y2="140"></line><circle class="a" cx="56.3" cy="140" r="2.5"></circle><circle class="t" cx="163.7" cy="140" r="4.7"></circle></g><g class="r" style="animation-delay:0.51s"><line class="g" x1="37.0" x2="110.0" y1="158" y2="158"></line><line class="c" x1="110.0" x2="183.0" y1="158" y2="158"></line><circle class="g" cx="37.0" cy="158" r="3.2"></circle><circle class="c" cx="183.0" cy="158" r="4.0"></circle></g><g class="r" style="animation-delay:0.57s"><line class="a" x1="35.9" x2="110.0" y1="176" y2="176"></line><line class="t" x1="110.0" x2="184.1" y1="176" y2="176"></line><circle class="a" cx="35.9" cy="176" r="4.0"></circle><circle class="t" cx="184.1" cy="176" r="3.2"></circle></g><g class="r" style="animation-delay:0.62s"><line class="a" x1="53.3" x2="110.0" y1="194" y2="194"></line><line class="t" x1="110.0" x2="166.7" y1="194" y2="194"></line><circle class="a" cx="53.3" cy="194" r="4.7"></circle><circle class="t" cx="166.7" cy="194" r="2.5"></circle></g><g class="r" style="animation-delay:0.68s"><line class="c" x1="84.9" x2="110.0" y1="212" y2="212"></line><line class="g" x1="110.0" x2="135.1" y1="212" y2="212"></line><circle class="c" cx="84.9" cy="212" r="5.1"></circle><circle class="g" cx="135.1" cy="212" r="2.1"></circle></g><g class="r" style="animation-delay:0.74s"><line class="c" x1="122.7" x2="110.0" y1="230" y2="230"></line><line class="g" x1="110.0" x2="97.3" y1="230" y2="230"></line><circle class="c" cx="122.7" cy="230" r="5.2"></circle><circle class="g" cx="97.3" cy="230" r="2.0"></circle></g><g class="r" style="animation-delay:0.80s"><line class="a" x1="157.4" x2="110.0" y1="248" y2="248"></line><line class="t" x1="110.0" x2="62.6" y1="248" y2="248"></line><circle class="a" cx="157.4" cy="248" r="4.9"></circle><circle class="t" cx="62.6" cy="248" r="2.3"></circle></g><g class="r" style="animation-delay:0.85s"><line class="g" x1="180.2" x2="110.0" y1="266" y2="266"></line><line class="c" x1="110.0" x2="39.8" y1="266" y2="266"></line><circle class="g" cx="180.2" cy="266" r="4.2"></circle><circle class="c" cx="39.8" cy="266" r="3.0"></circle></g><g class="r" style="animation-delay:0.91s"><line class="a" x1="185.5" x2="110.0" y1="284" y2="284"></line><line class="t" x1="110.0" x2="34.5" y1="284" y2="284"></line><circle class="a" cx="185.5" cy="284" r="3.4"></circle><circle class="t" cx="34.5" cy="284" r="3.8"></circle></g><g class="r" style="animation-delay:0.97s"><line class="c" x1="172.0" x2="110.0" y1="302" y2="302"></line><line class="g" x1="110.0" x2="48.0" y1="302" y2="302"></line><circle class="c" cx="172.0" cy="302" r="2.7"></circle><circle class="g" cx="48.0" cy="302" r="4.5"></circle></g><g class="r" style="animation-delay:1.03s"><line class="a" x1="143.0" x2="110.0" y1="320" y2="320"></line><line class="t" x1="110.0" x2="77.0" y1="320" y2="320"></line><circle class="a" cx="143.0" cy="320" r="2.2"></circle><circle class="t" cx="77.0" cy="320" r="5.0"></circle></g><g class="r" style="animation-delay:1.09s"><line class="a" x1="105.7" x2="110.0" y1="338" y2="338"></line><line class="t" x1="110.0" x2="114.3" y1="338" y2="338"></line><circle class="a" cx="105.7" cy="338" r="2.0"></circle><circle class="t" cx="114.3" cy="338" r="5.2"></circle></g><g class="r" style="animation-delay:1.14s"><line class="g" x1="69.6" x2="110.0" y1="356" y2="356"></line><line class="c" x1="110.0" x2="150.4" y1="356" y2="356"></line><circle class="g" cx="69.6" cy="356" r="2.2"></circle><circle class="c" cx="150.4" cy="356" r="5.0"></circle></g><g class="r" style="animation-delay:1.20s"><line class="a" x1="43.5" x2="110.0" y1="374" y2="374"></line><line class="t" x1="110.0" x2="176.5" y1="374" y2="374"></line><circle class="a" cx="43.5" cy="374" r="2.8"></circle><circle class="t" cx="176.5" cy="374" r="4.4"></circle></g><g class="r" style="animation-delay:1.26s"><line class="c" x1="34.0" x2="110.0" y1="392" y2="392"></line><line class="g" x1="110.0" x2="186.0" y1="392" y2="392"></line><circle class="c" cx="34.0" cy="392" r="3.6"></circle><circle class="g" cx="186.0" cy="392" r="3.6"></circle></g><g class="r" style="animation-delay:1.32s"><line class="a" x1="43.5" x2="110.0" y1="410" y2="410"></line><line class="t" x1="110.0" x2="176.5" y1="410" y2="410"></line><circle class="a" cx="43.5" cy="410" r="4.4"></circle><circle class="t" cx="176.5" cy="410" r="2.8"></circle></g><g class="r" style="animation-delay:1.38s"><line class="g" x1="69.6" x2="110.0" y1="428" y2="428"></line><line class="c" x1="110.0" x2="150.4" y1="428" y2="428"></line><circle class="g" cx="69.6" cy="428" r="5.0"></circle><circle class="c" cx="150.4" cy="428" r="2.2"></circle></g><g class="r" style="animation-delay:1.43s"><line class="a" x1="105.7" x2="110.0" y1="446" y2="446"></line><line class="t" x1="110.0" x2="114.3" y1="446" y2="446"></line><circle class="a" cx="105.7" cy="446" r="5.2"></circle><circle class="t" cx="114.3" cy="446" r="2.0"></circle></g><g class="r" style="animation-delay:1.49s"><line class="g" x1="143.0" x2="110.0" y1="464" y2="464"></line><line class="c" x1="110.0" x2="77.0" y1="464" y2="464"></line><circle class="g" cx="143.0" cy="464" r="5.0"></circle><circle class="c" cx="77.0" cy="464" r="2.2"></circle></g><g class="r" style="animation-delay:1.55s"><line class="t" x1="172.0" x2="110.0" y1="482" y2="482"></line><line class="a" x1="110.0" x2="48.0" y1="482" y2="482"></line><circle class="t" cx="172.0" cy="482" r="4.5"></circle><circle class="a" cx="48.0" cy="482" r="2.7"></circle></g><g class="r" style="animation-delay:1.61s"><line class="c" x1="185.5" x2="110.0" y1="500" y2="500"></line><line class="g" x1="110.0" x2="34.5" y1="500" y2="500"></line><circle class="c" cx="185.5" cy="500" r="3.8"></circle><circle class="g" cx="34.5" cy="500" r="3.4"></circle></g><g class="r" style="animation-delay:1.67s"><line class="g" x1="180.2" x2="110.0" y1="518" y2="518"></line><line class="c" x1="110.0" x2="39.8" y1="518" y2="518"></line><circle class="g" cx="180.2" cy="518" r="3.0"></circle><circle class="c" cx="39.8" cy="518" r="4.2"></circle></g><g class="r" style="animation-delay:1.72s"><line class="a" x1="157.4" x2="110.0" y1="536" y2="536"></line><line class="t" x1="110.0" x2="62.6" y1="536" y2="536"></line><circle class="a" cx="157.4" cy="536" r="2.3"></circle><circle class="t" cx="62.6" cy="536" r="4.9"></circle></g><g class="r" style="animation-delay:1.78s"><line class="t" x1="122.7" x2="110.0" y1="554" y2="554"></line><line class="a" x1="110.0" x2="97.3" y1="554" y2="554"></line><circle class="t" cx="122.7" cy="554" r="2.0"></circle><circle class="a" cx="97.3" cy="554" r="5.2"></circle></g><polyline class="s" pathlength="1" points="110.0,0 120.6,5 131.0,10 141.0,15 150.4,20 159.0,25 166.7,30 173.2,35 178.5,40 182.4,45 184.9,50 186.0,55 185.5,60 183.6,65 180.2,70 175.5,75 169.4,80 162.2,85 154.0,90 144.9,95 135.1,100 124.8,105 114.3,110 103.6,115 93.1,120 82.9,125 73.2,130 64.3,135 56.3,140 49.3,145 43.5,150 39.0,155 35.9,160 34.3,165 34.1,170 35.5,175 38.3,180 42.5,185 48.0,190 54.8,195 62.6,200 71.4,205 80.9,210 91.0,215 101.5,220 112.1,225 122.7,230 133.1,235 143.0,240 152.2,245 160.6,250 168.1,255 174.4,260 179.4,265 183.0,270 185.3,275 186.0,280 185.3,285 183.0,290 179.4,295 174.4,300 168.1,305 160.6,310 152.2,315 143.0,320 133.1,325 122.7,330 112.1,335 101.5,340 91.0,345 80.9,350 71.4,355 62.6,360 54.8,365 48.0,370 42.5,375 38.3,380 35.5,385 34.1,390 34.3,395 35.9,400 39.0,405 43.5,410 49.3,415 56.3,420 64.3,425 73.2,430 82.9,435 93.1,440 103.6,445 114.3,450 124.8,455 135.1,460 144.9,465 154.0,470 162.2,475 169.4,480 175.5,485 180.2,490 183.6,495 185.5,500 186.0,505 184.9,510 182.4,515 178.5,520 173.2,525 166.7,530 159.0,535 150.4,540 141.0,545 131.0,550 120.6,555 110.0,560"></polyline><polyline class="s" pathlength="1" points="110.0,0 99.4,5 89.0,10 79.0,15 69.6,20 61.0,25 53.3,30 46.8,35 41.5,40 37.6,45 35.1,50 34.0,55 34.5,60 36.4,65 39.8,70 44.5,75 50.6,80 57.8,85 66.0,90 75.1,95 84.9,100 95.2,105 105.7,110 116.4,115 126.9,120 137.1,125 146.8,130 155.7,135 163.7,140 170.7,145 176.5,150 181.0,155 184.1,160 185.7,165 185.9,170 184.5,175 181.7,180 177.5,185 172.0,190 165.2,195 157.4,200 148.6,205 139.1,210 129.0,215 118.5,220 107.9,225 97.3,230 86.9,235 77.0,240 67.8,245 59.4,250 51.9,255 45.6,260 40.6,265 37.0,270 34.7,275 34.0,280 34.7,285 37.0,290 40.6,295 45.6,300 51.9,305 59.4,310 67.8,315 77.0,320 86.9,325 97.3,330 107.9,335 118.5,340 129.0,345 139.1,350 148.6,355 157.4,360 165.2,365 172.0,370 177.5,375 181.7,380 184.5,385 185.9,390 185.7,395 184.1,400 181.0,405 176.5,410 170.7,415 163.7,420 155.7,425 146.8,430 137.1,435 126.9,440 116.4,445 105.7,450 95.2,455 84.9,460 75.1,465 66.0,470 57.8,475 50.6,480 44.5,485 39.8,490 36.4,495 34.5,500 34.0,505 35.1,510 37.6,515 41.5,520 46.8,525 53.3,530 61.0,535 69.6,540 79.0,545 89.0,550 99.4,555 110.0,560"></polyline></svg></figure>
+</div>
+</div>
+<div aria-hidden="true" class="seq">
+<code data-i18n="seq_code">&gt;jesus_m_munoz | bioinformatica | 2026</code>
+<div><i class="t">T</i><i class="a">A</i><i class="t">T</i><i class="g">G</i><i class="a">A</i><i class="a">A</i><i class="a">A</i><i class="t">T</i><i class="c">C</i><i class="c">C</i><i class="g">G</i><i class="c">C</i><i class="c">C</i><i class="g">G</i><i class="g">G</i><i class="t">T</i><i class="t">T</i><i class="t">T</i><i class="a">A</i><i class="g">G</i><i class="c">C</i><i class="g">G</i><i class="c">C</i><i class="g">G</i><i class="a">A</i><i class="a">A</i><i class="c">C</i><i class="t">T</i><i class="g">G</i><i class="t">T</i><i class="c">C</i><i class="c">C</i><i class="a">A</i><i class="a">A</i><i class="g">G</i><i class="g">G</i><i class="g">G</i><i class="c">C</i><i class="c">C</i><i class="a">A</i><i class="a">A</i><i class="g">G</i><i class="c">C</i><i class="a">A</i><i class="a">A</i><i class="g">G</i><i class="c">C</i><i class="g">G</i><i class="c">C</i><i class="g">G</i><i class="a">A</i><i class="c">C</i><i class="g">G</i><i class="t">T</i><i class="a">A</i><i class="c">C</i><i class="a">A</i><i class="t">T</i><i class="g">G</i><i class="t">T</i><i class="t">T</i><i class="c">C</i><i class="c">C</i><i class="c">C</i><i class="a">A</i><i class="t">T</i><i class="c">C</i><i class="c">C</i><i class="g">G</i><i class="t">T</i><i class="c">C</i><i class="g">G</i><i class="c">C</i><i class="g">G</i><i class="c">C</i><i class="t">T</i><i class="t">T</i><i class="a">A</i><i class="t">T</i><i class="t">T</i><i class="t">T</i><i class="t">T</i><i class="a">A</i><i class="c">C</i><i class="t">T</i><i class="g">G</i><i class="g">G</i><i class="a">A</i><i class="t">T</i><i class="c">C</i><i class="g">G</i><i class="g">G</i><i class="t">T</i><i class="a">A</i><i class="c">C</i><i class="c">C</i><i class="c">C</i><i class="c">C</i><i class="c">C</i><i class="a">A</i><i class="c">C</i><i class="c">C</i><i class="a">A</i><i class="t">T</i><i class="a">A</i><i class="t">T</i><i class="c">C</i><i class="t">T</i><i class="a">A</i><i class="g">G</i></div>
+</div>
+<section id="perfil">
+<div class="wrap">
+<h2 data-i18n="section_profile">Perfil</h2>
+<div class="about">
+<div>
+<p data-i18n="profile_p1">Soy graduado en Biología por la Universidad de Córdoba y estoy orientando mi formación hacia la bioinformática y la biología computacional. Me interesa aplicar herramientas de análisis computacional a preguntas de  investigación biológica y al descubrimiento de nuevos compuestos terapéuticos.
+          <p data-i18n="profile_p2">He ampliado mi formación con cursos de programación y bioinformática, así como una formación de diseño computacional de fármacos centrada en inhibidores de DprE1 de <em>Mycobacterium tuberculosis</em>.</p>
+</p></div>
+<div>
+<h3 data-i18n="interests">Áreas de interés</h3>
+<ul class="chips">
+<li data-i18n="chip_bioinformatics">Bioinformática</li>
+<li data-i18n="chip_compbio">Biología Computacional</li>
+<li>Drug Design &amp; Discovery</li>
+<li data-i18n="chip_data">Análisis de datos biológicos</li>
+</ul>
+<h3 data-i18n="tools">Herramientas</h3>
+<ul class="chips">
+<li>Python</li>
+<li>R</li>
+<li>Linux / Bash</li>
+<li>Geneious</li>
+<li>SkyLine</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="formacion">
+<div class="wrap">
+<h2 data-i18n="section_education">Formación</h2>
+<ol class="tl">
+<li>
+<span class="when" data-i18n="education_current">Actualidad</span>
+<h3 data-i18n="education_master">Máster en Biotecnología</h3>
+<div class="where" data-i18n="where_university">Universidad de Córdoba</div>
+<p>Trabajo Fin de Máster titulado: Identificación y caracterización de péptidos bioactivos en alimentos mediante análisis computacionales.</p>
+</li>
+<li>
+<span class="when" data-i18n="education_degree_label">Grado Universitario</span>
+<h3 data-i18n="education_degree">Grado en Biología</h3>
+<div class="where" data-i18n="where_university">Universidad de Córdoba</div>
+<p data-i18n="education_subjects">Asignaturas relevantes: Computación, Interpretación y Presentación de Datos en Biología; Ingeniería Genética; Estadística; Biotecnología Básica, Bioquímica Enzimática y Bioquímica Metabólica.</p>
+</li>
+</ol>
+</div>
+</section>
+<section id="experiencia">
+<div class="wrap">
+<h2 data-i18n="section_experience">Experiencia</h2>
+<ol class="tl">
+<li>
+<span class="when">2024</span>
+<h3 data-i18n="internship_extra">Prácticas Extracurriculares</h3>
+<div class="where" data-i18n="where_ethno">Ethnophytotech Research &amp; Consulting      3 meses</div>
+<ul>
+<p data-i18n="selected">Fui seleccionado mediante un programa competitivo de prácticas, incluyendo entrevista personal.</p>
+<li>HPLC</li>
+<li>TLC</li>
+<li data-i18n="exp_gc">Cromatografía Gases-Masas</li>
+<li data-i18n="exp_extract">Extracción de compuestos bioactivos</li>
+<li data-i18n="exp_characterize">Caracterización y optimización de métodos de purificación de compuestos bioactivos</li>
+</ul>
+</li>
+<li>
+<span class="when">2023</span>
+<h3 data-i18n="internship_curr">Prácticas Curriculares</h3>
+<div class="where" data-i18n="where_ias">Instituto de Agricultura Sostenible (IAS) CSIC      3 meses</div>
+<ul>
+<li data-i18n="plant_improvement">Mejora genética vegetal</li>
+<li data-i18n="cluster_work">Mantenimiento de los flujos de trabajo de análisis del grupo en un clúster de computación.</li>
+<li data-i18n="mentoring">Tutorización de dos estudiantes de máster.</li>
+</ul>
+</li>
+<li>
+<span class="when">2024-2025</span>
+<h3 data-i18n="student_collab">Alumno colaborador</h3>
+<div class="where" data-i18n="where_biochem">Departamento de Bioquímica y Biología Molecular 7 meses</div>
+<p data-i18n="biochem_support">Apoyo a ensayos de biología molecular y análisis bioquímico.</p>
+</li>
+<li>
+<span class="when">2023 – 2024</span>
+<h3 data-i18n="student_collab">Alumno colaborador</h3>
+<div class="where" data-i18n="where_plant">Departamento de Fisiología Vegetal 7 meses</div>
+<p data-i18n="plant_support">Apoyo a ensayos de biofertilizantes y fisiología vegetal.</p>
+</li>
+</ol>
+</div>
+</section>
+<section id="cursos">
+<div class="wrap">
+<h2 data-i18n="section_courses">Cursos Complementarios</h2>
+<ol class="tl">
+<li>
+<span class="when">2026</span>
+<h3 data-i18n="genomac_course">Drug Discovery Research Internship | OmicsBoard</h3>
+<div class="where" data-i18n="where_genomac">Genomac</div>
+<ul>
+<li data-i18n="course_genomac_1">Aproximaciones computacionales en Drug discovery and Development.</li>
+<li data-i18n="course_genomac_2">Estudio de la diana terapéutica DprE1 en <em>Mycobacterium tuberculosis</em></li>
+<li data-i18n="course_genomac_3">Exploración de estrategias computacionales para la identificación y evaluación de posibles inhibidores.</li>
+<li data-i18n="course_genomac_4">Aplicación de conceptos estructurales y moleculares en un proyecto de Drug discovery.</li>
+</ul>
+</li>
+<li>
+<span class="when">2026</span>
+<h3 data-i18n="python_course">Introducción a Python | Code in Place</h3>
+<div class="where" data-i18n="where_stanford">Stanford University</div>
+<ul>
+<li data-i18n="course_python_1">Fundamentos de programación en Python y pensamiento computacional.</li>
+<li data-i18n="course_python_2">Uso de variables, data types, condicionales y bucles.</li>
+<li data-i18n="course_python_3">Funciones, código modular y estrategias de resolución de problemas.</li>
+<li data-i18n="course_python_4">Desarrollo de pensamiento lógico a través de ejercicios de programación prácticos.</li>
+</ul>
+</li>
+<li>
+<span class="when">2026</span>
+<h3 data-i18n="bioinfo_course">Introduction to Bioinformatics</h3>
+<div class="where" data-i18n="where_biocode">BioCode Innovators</div>
+<ul>
+<li data-i18n="course_bio_1">Aproximaciones computacionales para el análisis de datos biológicos.</li>
+<li data-i18n="course_bio_2">Exploración de recursos bioinformáticos y bases de datos biológicas.</li>
+<li data-i18n="course_bio_3">Fundamentos del análisis de secuencias biológicas.</li>
+<li data-i18n="course_bio_4">Aplicación de herramientas computacionales a preguntas biológicas de investigación.</li>
+</ul>
+</li>
+</ol>
+</div>
+</section>
+<section id="proyectos">
+<div class="wrap">
+<h2 data-i18n="section_projects">Proyectos</h2>
+<div class="grid">
+<article class="card feature">
+<div>
+<h3 data-i18n="tfg_title">Trabajo de Fin de Grado</h3>
+<p data-i18n="tfg_desc">Efecto del transgén <em>FaNPR3.2</em> <p>en el perfil de expresión de genes de defensa de <em>Arabidopsis</em> WT y doble mutante. El trabajo estudió el efecto del gen <em>FaNPR3.2</em> de fresa sobre la expresión de sus ortólogos (<em>Atnp3/Atnpr4</em>) en <em>Arabidopsis thaliana</em>. </p></p>
+<ul class="tags"><li data-i18n="tag_molecular">Biología Molecular</li><li data-i18n="tag_expression">Expresión Génica</li><li>qRT-PCR</li><li data-i18n="tag_nucleic">Extracción de Ácidos Nucleicos</li><li data-i18n="tag_electrophoresis">Electroforesis 1D</li><li data-i18n="tag_spectro">Espectrofotometría</li></ul>
+</div>
+</article>
+<article class="card mid">
+<h3 data-i18n="dpr_title">Estudio de inhibidores de DprE1 de <em>Mycobacterium tuberculosis</em></h3>
+<p data-i18n="dpr_desc"> Proyecto desarrollado durante las prácticas de diseño computacional de fármacos en Genomac, centrado en inhibidores de la diana DprE1 de <em>Mycobacterium tuberculosis</em>.</p>
+<ul class="tags"><li>Drug Discovery</li><li>DprE1</li><li>Drug Design</li></ul>
+</article>
+</div>
+</div>
+</section>
+<section id="contacto">
+<div class="wrap">
+<h2 data-i18n="section_contact">Contacto</h2>
+<div class="contact">
+<p data-i18n="contact_text">Estoy abierto a colaboraciones, estancias de investigación y conversaciones con equipos de descubrimiento de fármacos. Escríbeme y respondo a más tardar en tres días.</p>
+<div class="links">
+<a class="btn solid" href="mailto:jmmvazquez122@gmail.com">jmmvazquez122@gmail.com</a>
+<a class="btn" href="https://github.com/jmunoz-R">GitHub</a>
+<a class="btn" href="https://www.linkedin.com/in/jesusmmunoz-bio-data/">LinkedIn</a>
+</div>
+</div>
+</div>
+</section>
 </main>
-
 <footer>
-  <div class="wrap">© 2026 Jesús Manuel Muñoz Vázquez. Todos los derechos reservados.</div>
+<div class="wrap" data-i18n="footer">© 2026 Jesús Manuel Muñoz Vázquez. Todos los derechos reservados.</div>
 </footer>
+<script>
+const translations = {"es": {"brand": "Jesús Manuel Muñoz Vázquez", "nav_profile": "Perfil", "nav_education": "Formación", "nav_experience": "Experiencia", "nav_courses": "Cursos", "nav_projects": "Proyectos", "nav_contact": "Contacto", "hero_role": "Biología | Bioinformática | Drug Design & Discovery", "hero_lead_1": "Soy graduado en Biología por la Universidad de Córdoba y estoy orientando mi formación hacia la bioinformática y la biología computacional. Me interesa aplicar herramientas computacionales al estudio de sistemas biológicos y al descubrimiento de nuevos compuestos terapéuticos así como terapias génicas.", "hero_lead_2": "Actualmente estoy desarrollando experiencia en el diseño computacional de fármacos, combinando conocimientos de biología molecular con metodologías de modelización y análisis estructural.", "hero_projects": "Ver proyectos", "hero_contact": "Escríbeme", "seq_code": ">jesus_m_munoz | bioinformatica | 2026", "section_profile": "Perfil", "profile_p1": "Soy graduado en Biología por la Universidad de Córdoba y estoy orientando mi formación hacia la bioinformática y la biología computacional. Me interesa aplicar herramientas de análisis computacional a preguntas de  investigación biológica y al descubrimiento de nuevos compuestos terapéuticos.", "profile_p2": "He ampliado mi formación con cursos de programación y bioinformática, así como una formación de diseño computacional de fármacos centrada en inhibidores de DprE1 de <em>Mycobacterium tuberculosis</em>.", "interests": "Áreas de interés", "tools": "Herramientas", "chip_bioinformatics": "Bioinformática", "chip_compbio": "Biología Computacional", "chip_data": "Análisis de datos biológicos", "section_education": "Formación", "education_current": "Actualidad", "education_master": "Máster en Biotecnología", "education_degree_label": "Grado Universitario", "education_degree": "Grado en Biología", "education_subjects": "Asignaturas relevantes: Computación, Interpretación y Presentación de Datos en Biología; Ingeniería Genética; Estadística; Biotecnología Básica, Bioquímica Enzimática y Bioquímica Metabólica.", "section_experience": "Experiencia", "internship_extra": "Prácticas Extracurriculares", "internship_curr": "Prácticas Curriculares", "student_collab": "Alumno colaborador", "selected": "Fui seleccionado mediante un programa competitivo de prácticas, incluyendo entrevista personal.", "plant_improvement": "Mejora genética vegetal", "cluster_work": "Mantenimiento de los flujos de trabajo de análisis del grupo en un clúster de computación.", "mentoring": "Tutorización de dos estudiantes de máster.", "biochem_support": "Apoyo a ensayos de biología molecular y análisis bioquímico.", "plant_support": "Apoyo a ensayos de biofertilizantes y fisiología vegetal.", "section_courses": "Cursos Complementarios", "genomac_course": "Drug Discovery Research Internship | OmicsBoard", "python_course": "Introducción a Python | Code in Place", "bioinfo_course": "Introduction to Bioinformatics", "course_genomac_1": "Aproximaciones computacionales en Drug discovery and Development.", "course_genomac_2": "Estudio de la diana terapéutica DprE1 en <em>Mycobacterium tuberculosis</em>", "course_genomac_3": "Exploración de estrategias computacionales para la identificación y evaluación de posibles inhibidores.", "course_genomac_4": "Aplicación de conceptos estructurales y moleculares en un proyecto de Drug discovery.", "course_python_1": "Fundamentos de programación en Python y pensamiento computacional.", "course_python_2": "Uso de variables, data types, condicionales y bucles.", "course_python_3": "Funciones, código modular y estrategias de resolución de problemas.", "course_python_4": "Desarrollo de pensamiento lógico a través de ejercicios de programación prácticos.", "course_bio_1": "Aproximaciones computacionales para el análisis de datos biológicos.", "course_bio_2": "Exploración de recursos bioinformáticos y bases de datos biológicas.", "course_bio_3": "Fundamentos del análisis de secuencias biológicas.", "course_bio_4": "Aplicación de herramientas computacionales a preguntas biológicas de investigación.", "section_projects": "Proyectos", "tfg_title": "Trabajo de Fin de Grado", "tfg_desc": "Efecto del transgén <em>FaNPR3.2</em> <p>en el perfil de expresión de genes de defensa de <em>Arabidopsis</em> WT y doble mutante. El trabajo estudió el efecto del gen <em>FaNPR3.2</em> de fresa sobre la expresión de sus ortólogos (<em>Atnp3/Atnpr4</em>) en <em>Arabidopsis thaliana</em>. </p>", "dpr_title": "Estudio de inhibidores de DprE1 de <em>Mycobacterium tuberculosis</em>", "dpr_desc": "Proyecto desarrollado durante las prácticas de diseño computacional de fármacos en Genomac, centrado en inhibidores de la diana DprE1 de <em>Mycobacterium tuberculosis</em>.", "section_contact": "Contacto", "contact_text": "Estoy abierto a colaboraciones, estancias de investigación y conversaciones con equipos de descubrimiento de fármacos. Escríbeme y respondo a más tardar en tres días.", "footer": "© 2026 Jesús Manuel Muñoz Vázquez. Todos los derechos reservados.", "where_university": "Universidad de Córdoba", "where_ethno": "Ethnophytotech Research & Consulting      3 meses", "where_ias": "Instituto de Agricultura Sostenible (IAS) CSIC      3 meses", "where_biochem": "Departamento de Bioquímica y Biología Molecular 7 meses", "where_plant": "Departamento de Fisiología Vegetal 7 meses", "where_genomac": "Genomac", "where_stanford": "Stanford University", "where_biocode": "BioCode Innovators", "exp_gc": "Cromatografía Gases-Masas", "exp_extract": "Extracción de compuestos bioactivos", "exp_characterize": "Caracterización y optimización de métodos de purificación de compuestos bioactivos", "tag_molecular": "Biología Molecular", "tag_expression": "Expresión Génica", "tag_nucleic": "Extracción de Ácidos Nucleicos", "tag_electrophoresis": "Electroforesis 1D", "tag_spectro": "Espectrofotometría"}, "en": {"brand": "Jesús Manuel Muñoz Vázquez", "nav_profile": "Profile", "nav_education": "Education", "nav_experience": "Experience", "nav_courses": "Training", "nav_projects": "Projects", "nav_contact": "Contact", "hero_role": "Biology | Bioinformatics | Drug Design & Discovery", "hero_lead_1": "I hold a degree in Biology from the University of Córdoba and am focusing my training on bioinformatics and computational biology. I am interested in applying computational tools to the study of biological systems, the discovery of new therapeutic compounds, and gene therapies.", "hero_lead_2": "I am currently gaining experience in computational drug design, combining knowledge of molecular biology with modelling and structural analysis approaches.", "hero_projects": "View projects", "hero_contact": "Get in touch", "seq_code": ">jesus_m_munoz | bioinformatics | 2026", "section_profile": "Profile", "profile_p1": "I hold a degree in Biology from the University of Córdoba and am focusing my training on bioinformatics and computational biology. I am interested in applying computational analysis tools to biological research questions and the discovery of new therapeutic compounds.", "profile_p2": "I have expanded my training through courses in programming and bioinformatics, as well as computational drug design training focused on DprE1 inhibitors from <em>Mycobacterium tuberculosis</em>.", "interests": "Areas of Interest", "tools": "Tools", "chip_bioinformatics": "Bioinformatics", "chip_compbio": "Computational Biology", "chip_data": "Biological Data Analysis", "section_education": "Education", "education_current": "Present", "education_master": "Master's Degree in Biotechnology", "education_degree_label": "Undergraduate Degree", "education_degree": "BSc in Biology", "education_subjects": "Relevant coursework: Computing, Interpretation and Presentation of Biological Data; Genetic Engineering; Statistics; Basic Biotechnology; Enzymatic Biochemistry; and Metabolic Biochemistry.", "section_experience": "Experience", "internship_extra": "Extracurricular Internship", "internship_curr": "Curricular Internship", "student_collab": "Student Research Assistant", "selected": "I was selected through a competitive internship programme that included an interview.", "plant_improvement": "Plant genetic improvement", "cluster_work": "Maintenance of the group's analysis workflows on a computing cluster.", "mentoring": "Mentoring of two master's students.", "biochem_support": "Support for molecular biology assays and biochemical analysis.", "plant_support": "Support for biofertiliser and plant physiology assays.", "section_courses": "Additional Training", "genomac_course": "Drug Discovery Research Internship | OmicsBoard", "python_course": "Introduction to Python | Code in Place", "bioinfo_course": "Introduction to Bioinformatics", "course_genomac_1": "Computational approaches to drug discovery and development.", "course_genomac_2": "Study of DprE1 as a therapeutic target in <em>Mycobacterium tuberculosis</em>.", "course_genomac_3": "Exploration of computational strategies for identifying and evaluating potential inhibitors.", "course_genomac_4": "Application of structural and molecular concepts in a drug discovery project.", "course_python_1": "Python programming fundamentals and computational thinking.", "course_python_2": "Use of variables, data types, conditionals and loops.", "course_python_3": "Functions, modular code and problem-solving strategies.", "course_python_4": "Development of logical thinking through practical programming exercises.", "course_bio_1": "Computational approaches to biological data analysis.", "course_bio_2": "Exploration of bioinformatics resources and biological databases.", "course_bio_3": "Fundamentals of biological sequence analysis.", "course_bio_4": "Application of computational tools to biological research questions.", "section_projects": "Projects", "tfg_title": "Bachelor's Thesis", "tfg_desc": "Effect of the <em>FaNPR3.2</em> transgene on the expression profile of defence genes in wild-type and double-mutant <em>Arabidopsis</em>. The study examined the effect of the strawberry <em>FaNPR3.2</em> gene on the expression of its orthologues (<em>Atnpr3/Atnpr4</em>) in <em>Arabidopsis thaliana</em>.", "dpr_title": "Study of DprE1 inhibitors from <em>Mycobacterium tuberculosis</em>", "dpr_desc": "Project developed during the computational drug design internship at Genomac, focused on inhibitors of the DprE1 target from <em>Mycobacterium tuberculosis</em>.", "section_contact": "Contact", "contact_text": "I am open to collaborations, research placements and conversations with drug discovery teams. Feel free to get in touch; I aim to reply within three days.", "footer": "© 2026 Jesús Manuel Muñoz Vázquez. All rights reserved.", "where_university": "University of Córdoba", "where_ethno": "Ethnophytotech Research & Consulting · 3 months", "where_ias": "Institute for Sustainable Agriculture (IAS), CSIC · 3 months", "where_biochem": "Department of Biochemistry and Molecular Biology · 7 months", "where_plant": "Department of Plant Physiology · 7 months", "where_genomac": "Genomac", "where_stanford": "Stanford University", "where_biocode": "BioCode Innovators", "exp_gc": "Gas chromatography–mass spectrometry", "exp_extract": "Extraction of bioactive compounds", "exp_characterize": "Characterisation and optimisation of bioactive compound purification methods", "tag_molecular": "Molecular Biology", "tag_expression": "Gene Expression", "tag_nucleic": "Nucleic Acid Extraction", "tag_electrophoresis": "1D Electrophoresis", "tag_spectro": "Spectrophotometry"}};
 
-</body>
-</html>
+function setLanguage(lang) {
+  const dictionary = translations[lang] || translations.es;
+  document.querySelectorAll("[data-i18n]").forEach((element) => {
+    const key = element.getAttribute("data-i18n");
+    if (dictionary[key] !== undefined) element.innerHTML = dictionary[key];
+  });
+  document.documentElement.lang = lang;
+  document.title = lang === "en"
+    ? "Jesús Manuel Muñoz Vázquez · Computational Biology"
+    : "Jesús Manuel Muñoz Vázquez · Biología computacional";
+  const description = document.querySelector('meta[name="description"]');
+  if (description) {
+    description.content = lang === "en"
+      ? "Portfolio of Jesús Manuel Muñoz Vázquez, Biology graduate focused on bioinformatics and computational drug discovery."
+      : "Portfolio de Jesús Manuel Muñoz Vázquez, graduado en Biología orientado a la bioinformática y el descubrimiento computacional de fármacos.";
+  }
+  document.querySelectorAll(".lang-btn").forEach((button) => {
+    const active = button.dataset.lang === lang;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
+  try { localStorage.setItem("portfolio-language", lang); } catch (error) {}
+}
+
+document.querySelectorAll(".lang-btn").forEach((button) => {
+  button.addEventListener("click", () => setLanguage(button.dataset.lang));
+});
+let savedLanguage = "es";
+try { savedLanguage = localStorage.getItem("portfolio-language") || "es"; } catch (error) {}
+setLanguage(savedLanguage);
+</script></body></html>
