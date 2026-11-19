@@ -14,7 +14,7 @@
   Cada texto lleva un atributo data-en con la versión en inglés.
   Lo que hay dentro de la etiqueta es la versión en español:
       <h2 data-en="Profile">Perfil</h2>
-  Para añadir un texto nuevo, añadir los dos idiomas en la misma etiqueta.
+  Para añadir un texto nuevo, escribe los dos idiomas en la misma etiqueta.
 -->
  
 <style>
@@ -73,7 +73,7 @@ nav a:hover{color:var(--ink);background:var(--panel)}
 .btn.solid{background:var(--teal);border-color:var(--teal);color:#06231F}
 .btn.solid:hover{background:#7BE3D9}
  
-/* ========== 5. ADN decorativo (la hélice y la cinta se dibujan) ========== */
+/* ========== 5. ADN decorativo (la hélice y la cinta se dibujan en el script del final) ========== */
 .base-a{stroke:var(--teal);fill:var(--teal)}
 .base-t{stroke:var(--violet);fill:var(--violet)}
 .base-g{stroke:var(--amber);fill:var(--amber)}
@@ -120,7 +120,7 @@ section>.wrap>h2{font-size:clamp(2.3rem,5.5vw,3.6rem);margin-bottom:2.2rem}
 .card h3{font-size:1.65rem}
 .card p{color:var(--muted);margin:0;font-size:.98rem}
 .card.feature{grid-column:span 3;display:grid;grid-template-columns:1.2fr 1fr;gap:2.2rem;background:var(--panel2);border-radius:22px;padding:clamp(1.6rem,4vw,2.8rem)}
-.card.feature>div{display:flex;flex-direction:column;gap:.7rem}
+.card.feature>div{display:flex;flex-direction:column;gap:.7rem} /* tarjeta destacada, ancho completo */
 .card.feature h3{font-size:clamp(2rem,4vw,2.9rem)}
 .card.feature p{font-size:1.05rem}
 .res{align-self:center;margin:0;padding:0;list-style:none;display:grid;gap:1.2rem}
@@ -139,8 +139,7 @@ footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem;border-top:1px 
  
 /* ========== 10. ADAPTACIÓN A TABLET Y MÓVIL ========== */
 @media (max-width:860px){
-  .hero .wrap,.about{grid-template-columns:1fr}
-  .card.feature: .hero .wrap,.about,.card.feature{grid-template-columns:1fr}
+  .hero .wrap,.about,.card.feature{grid-template-columns:1fr}
   .helix{order:-1;max-width:110px}                        /* la hélice pasa arriba y se hace pequeña */
   .grid{grid-template-columns:1fr 1fr}
   .card.feature,.card.mid{grid-column:span 2}
@@ -193,10 +192,12 @@ footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem;border-top:1px 
       <div>
         <h1>Jesús Manuel Muñoz Vázquez</h1>
         <p class="role" data-en="Biology | Bioinformatics | Drug Design &amp; Discovery">Biología | Bioinformática | Drug Design &amp; Discovery</p>
-        <p class="lead" data-en="I hold a degree in Biology from the University of Córdoba and currently pursuing a Master's Degree in Biotechnology. I am interested in bioinformatics and computational drug design: applying computational tools to the study of biological systems and the search for new therapeutic compounds.">Graduado en Biología por la Universidad de Córdoba y actualmente cursando el Máster en Biotecnología. Me interesa la bioinformática y el diseño computacional de fármacos: aplicar herramientas computacionales al estudio de sistemas biológicos y a la búsqueda de nuevos compuestos terapéuticos.</p>
+        <p class="lead" data-en="I hold a degree in Biology from the University of Córdoba and am currently pursuing a Master's Degree in Biotechnology. I am interested in bioinformatics and computational drug design: applying computational tools to the study of biological systems and the search for new therapeutic compounds.">Graduado en Biología por la Universidad de Córdoba y actualmente cursando el Máster en Biotecnología. Me interesa la bioinformática y el diseño computacional de fármacos: aplicar herramientas computacionales al estudio de sistemas biológicos y a la búsqueda de nuevos compuestos terapéuticos.</p>
         <div class="cta">
           <a class="btn solid" href="#proyectos" data-en="View projects">Ver proyectos</a>
           <a class="btn" href="#contacto" data-en="Get in touch">Escríbeme</a>
+          <!-- BOTÓN DE CV: sube cv.pdf al repositorio y activa el botón quitando el comentario de la línea siguiente -->
+          <!-- <a class="btn" href="cv.pdf" data-en="Download CV">Descargar CV</a> -->
         </div>
       </div>
       <!-- La doble hélice se dibuja con JavaScript (final del archivo) -->
@@ -216,8 +217,9 @@ footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem;border-top:1px 
       <h2 data-en="Profile">Perfil</h2>
       <div class="about">
         <div>
-          <p data-en="I hold a degree in Biology from the University of Córdoba and I am focusing my training on bioinformatics and computational biology. I am interested in applying computational analysis tools to biological research questions and the discovery of new therapeutic compounds.">Soy graduado en Biología por la Universidad de Córdoba y estoy orientando mi formación hacia la bioinformática y la biología computacional. Me interesa aplicar herramientas de análisis computacional a preguntas de investigación biológica y al descubrimiento de nuevos compuestos terapéuticos.</p>
+          <p data-en="My profile combines experimental work and computational analysis. In the laboratory I have worked with molecular biology and analytical chemistry techniques, and I am now directing my training towards bioinformatics, biological data analysis and drug design.">Mi perfil combina trabajo experimental y análisis computacional. En el laboratorio he trabajado con técnicas de biología molecular y química analítica, y ahora oriento mi formación hacia la bioinformática, el análisis de datos biológicos y el diseño de fármacos.</p>
           <p data-en="I have expanded my training through courses in programming and bioinformatics, as well as computational drug design training focused on DprE1 inhibitors from <em>Mycobacterium tuberculosis</em>.">He ampliado mi formación con cursos de programación y bioinformática, así como una formación de diseño computacional de fármacos centrada en inhibidores de DprE1 de <em>Mycobacterium tuberculosis</em>.</p>
+          <p data-en="I am currently looking for a job opportunity or a PhD (doctoral thesis) position.">Actualmente busco una oportunidad laboral o una tesis doctoral.</p>
         </div>
         <div>
           <h3 data-en="Areas of Interest">Áreas de interés</h3>
@@ -235,6 +237,20 @@ footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem;border-top:1px 
             <li>Geneious</li>
             <li>Skyline</li>
           </ul>
+          <h3 data-en="Laboratory techniques">Técnicas de laboratorio</h3>
+          <ul class="chips">
+            <li>qRT-PCR</li>
+            <li>HPLC</li>
+            <li>TLC</li>
+            <li>GC-MS</li>
+            <li data-en="Nucleic acid extraction">Extracción de ácidos nucleicos</li>
+            <li data-en="1D electrophoresis">Electroforesis 1D</li>
+          </ul>
+          <h3 data-en="Languages">Idiomas</h3>
+          <ul class="chips">
+            <li data-en="Spanish: native">Español: nativo</li>
+            <li data-en="English: B1">Inglés: B1</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -247,13 +263,13 @@ footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem;border-top:1px 
       <h2 data-en="Education">Formación</h2>
       <ol class="tl">
         <li>
-          <span class="when" data-en="Present">Actualidad</span>
+          <span class="when" data-en="2026 – Present">2026 – actualidad</span>
           <h3 data-en="Master's Degree in Biotechnology">Máster en Biotecnología</h3>
           <div class="where" data-en="University of Córdoba">Universidad de Córdoba</div>
           <p data-en="Master's thesis: Identification and characterisation of bioactive peptides in food through computational analysis.">Trabajo Fin de Máster: Identificación y caracterización de péptidos bioactivos en alimentos mediante análisis computacional.</p>
         </li>
         <li>
-          <span class="when" data-en="2026 Graduate">Graduado en 2026</span>
+          <span class="when" data-en="Graduated in 2026">Graduado en 2026</span>
           <h3 data-en="BSc in Biology">Grado en Biología</h3>
           <div class="where" data-en="University of Córdoba">Universidad de Córdoba</div>
           <p data-en="Relevant coursework: Computing, Interpretation and Presentation of Biological Data; Genetic Engineering; Statistics; Basic Biotechnology; Enzymatic Biochemistry; and Metabolic Biochemistry.">Asignaturas relevantes: Computación, Interpretación y Presentación de Datos en Biología; Ingeniería Genética; Estadística; Biotecnología Básica, Bioquímica Enzimática y Bioquímica Metabólica.</p>
@@ -262,13 +278,13 @@ footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem;border-top:1px 
     </div>
   </section>
  
-  <!-- ========== EXPERIENCIA ========== -->
+  <!-- ========== EXPERIENCIA (de más reciente a más antigua) ========== -->
   <section id="experiencia">
     <div class="wrap">
       <h2 data-en="Experience">Experiencia</h2>
       <ol class="tl">
-       <li>
-          <span class="when">2024-2025</span>
+        <li>
+          <span class="when">2024 – 2025</span>
           <h3 data-en="Student Research Assistant">Alumno colaborador</h3>
           <div class="where" data-en="Department of Biochemistry and Molecular Biology · 7 months">Departamento de Bioquímica y Biología Molecular · 7 meses</div>
           <p data-en="Support for molecular biology assays and biochemical analysis.">Apoyo a ensayos de biología molecular y análisis bioquímico.</p>
@@ -281,12 +297,12 @@ footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem;border-top:1px 
           <ul>
             <li>HPLC</li>
             <li>TLC</li>
-            <li data-en="Gas chromatography–mass spectrometry">Cromatografía de gases acoplada a espectrometría de masas (GC-MS)</li>
+            <li data-en="Gas chromatography–mass spectrometry (GC-MS)">Cromatografía de gases acoplada a espectrometría de masas (GC-MS)</li>
             <li data-en="Extraction of bioactive compounds">Extracción de compuestos bioactivos</li>
             <li data-en="Characterisation and optimisation of bioactive compound purification methods">Caracterización y optimización de métodos de purificación de compuestos bioactivos</li>
           </ul>
         </li>
-       <li>
+        <li>
           <span class="when">2023 – 2024</span>
           <h3 data-en="Student Research Assistant">Alumno colaborador</h3>
           <div class="where" data-en="Department of Botany, Ecology and Plant Physiology · 7 months">Departamento de Botánica, Ecología y Fisiología Vegetal · 7 meses</div>
@@ -298,11 +314,10 @@ footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem;border-top:1px 
           <div class="where" data-en="Institute for Sustainable Agriculture (IAS), CSIC · 3 months">Instituto de Agricultura Sostenible (IAS) CSIC · 3 meses</div>
           <ul>
             <li data-en="Plant genetic improvement">Mejora genética vegetal</li>
-            <li data-en="Maintenance of the group's analysis workflows on a computing cluster.">Mantenimiento de los flujos de trabajo de análisis del grupo en un clúster de computación.</li>
-            <li data-en="Mentoring of two master's students.">Tutorización de dos estudiantes de máster.</li>
+            <li data-en="Plant disease-resistance assays">Ensayos de resistencia a enfermedad en plantas</li>
+            <li data-en="Experimental design">Diseño experimental</li>
           </ul>
         </li>
-        
       </ol>
     </div>
   </section>
@@ -317,10 +332,10 @@ footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem;border-top:1px 
           <h3>Drug Discovery Research Internship</h3>
           <div class="where">Genomac</div>
           <ul>
-            <li data-en="Computational approaches to drug discovery and development.">Aproximaciones computacionales en Drug discovery and Development.</li>
-            <li data-en="Study of DprE1 as a therapeutic target in <em>Mycobacterium tuberculosis</em>.">Estudio de la diana terapéutica DprE1 en <em>Mycobacterium tuberculosis</em></li>
+            <li data-en="Computational approaches to drug discovery and development.">Enfoques computacionales para el descubrimiento y desarrollo de fármacos.</li>
+            <li data-en="Study of DprE1 as a therapeutic target in <em>Mycobacterium tuberculosis</em>.">Estudio de la diana terapéutica DprE1 en <em>Mycobacterium tuberculosis</em>.</li>
             <li data-en="Exploration of computational strategies for identifying and evaluating potential inhibitors.">Exploración de estrategias computacionales para la identificación y evaluación de posibles inhibidores.</li>
-            <li data-en="Application of structural and molecular concepts in a drug discovery project.">Aplicación de conceptos estructurales y moleculares en un proyecto de Drug discovery.</li>
+            <li data-en="Application of structural and molecular concepts in a drug discovery project.">Aplicación de conceptos estructurales y moleculares en un proyecto de descubrimiento de fármacos.</li>
           </ul>
         </li>
         <li>
@@ -329,7 +344,7 @@ footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem;border-top:1px 
           <div class="where">Stanford University</div>
           <ul>
             <li data-en="Python programming fundamentals and computational thinking.">Fundamentos de programación en Python y pensamiento computacional.</li>
-            <li data-en="Use of variables, data types, conditionals and loops.">Uso de variables, data types, condicionales y bucles.</li>
+            <li data-en="Use of variables, data types, conditionals and loops.">Uso de variables, tipos de datos, condicionales y bucles.</li>
             <li data-en="Functions, modular code and problem-solving strategies.">Funciones, código modular y estrategias de resolución de problemas.</li>
             <li data-en="Development of logical thinking through practical programming exercises.">Desarrollo de pensamiento lógico a través de ejercicios de programación prácticos.</li>
           </ul>
@@ -339,7 +354,7 @@ footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem;border-top:1px 
           <h3>Introduction to Bioinformatics</h3>
           <div class="where">BioCode Innovators</div>
           <ul>
-            <li data-en="Computational approaches to biological data analysis.">Aproximaciones computacionales para el análisis de datos biológicos.</li>
+            <li data-en="Computational approaches to biological data analysis.">Enfoques computacionales para el análisis de datos biológicos.</li>
             <li data-en="Exploration of bioinformatics resources and biological databases.">Exploración de recursos bioinformáticos y bases de datos biológicas.</li>
             <li data-en="Fundamentals of biological sequence analysis.">Fundamentos del análisis de secuencias biológicas.</li>
             <li data-en="Application of computational tools to biological research questions.">Aplicación de herramientas computacionales a preguntas biológicas de investigación.</li>
@@ -356,23 +371,24 @@ footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem;border-top:1px 
       <h2 data-en="Projects">Proyectos</h2>
       <div class="grid">
         <article class="card feature">
-         <div>
-          <h3 data-en="Bachelor's Thesis">Trabajo de Fin de Grado</h3>
-          <p data-en="Effect of the <em>FaNPR3.2</em> transgene on the expression profile of defence genes in wild-type and double-mutant <em>Arabidopsis</em>. The study examined the effect of the strawberry <em>FaNPR3.2</em> gene on the expression of its orthologues (<em>Atnpr3/Atnpr4</em>) in <em>Arabidopsis thaliana</em>.">Efecto del transgén <em>FaNPR3.2</em> en el perfil de expresión de genes de defensa de <em>Arabidopsis</em> WT y doble mutante. El trabajo estudió el efecto del gen <em>FaNPR3.2</em> de fresa sobre la expresión de sus ortólogos (<em>Atnpr3/Atnpr4</em>) en <em>Arabidopsis thaliana</em>.</p>
-          <ul class="tags">
-            <li data-en="Molecular Biology">Biología Molecular</li>
-            <li data-en="Gene Expression">Expresión Génica</li>
-            <li>qRT-PCR</li>
-            <li data-en="Nucleic Acid Extraction">Extracción de Ácidos Nucleicos</li>
-            <li data-en="1D Electrophoresis">Electroforesis 1D</li>
-            <li data-en="Spectrophotometry">Espectrofotometría</li>
+          <div>
+            <h3 data-en="Bachelor's Thesis">Trabajo de Fin de Grado</h3>
+            <p data-en="Effect of the <em>FaNPR3.2</em> transgene on the expression profile of defence genes in wild-type and double-mutant <em>Arabidopsis</em>. The study examined the effect of the strawberry <em>FaNPR3.2</em> gene on the expression of its orthologues (<em>Atnpr3/Atnpr4</em>) in <em>Arabidopsis thaliana</em>.">Efecto del transgén <em>FaNPR3.2</em> en el perfil de expresión de genes de defensa de <em>Arabidopsis</em> WT y doble mutante. El trabajo estudió el efecto del gen <em>FaNPR3.2</em> de fresa sobre la expresión de sus ortólogos (<em>Atnpr3/Atnpr4</em>) en <em>Arabidopsis thaliana</em>.</p>
+            <ul class="tags">
+              <li data-en="Molecular Biology">Biología Molecular</li>
+              <li data-en="Gene Expression">Expresión Génica</li>
+              <li>qRT-PCR</li>
+              <li data-en="Nucleic Acid Extraction">Extracción de Ácidos Nucleicos</li>
+              <li data-en="1D Electrophoresis">Electroforesis 1D</li>
+              <li data-en="Spectrophotometry">Espectrofotometría</li>
+            </ul>
+          </div>
+          <!-- Datos destacados (si cambias un número, cámbialo en español y en data-en) -->
+          <ul class="res">
+            <li data-en="<strong>8</strong>genes analysed"><strong>8</strong>genes analizados</li>
+            <li data-en="<strong>&gt;300</strong>seedlings grown"><strong>&gt;300</strong>plántulas cultivadas</li>
+            <li data-en="<strong>11</strong>PCR assays"><strong>11</strong>ensayos de PCR</li>
           </ul>
-         </div>
-         <ul class="res">
-           <li data-en="<strong>8</strong>genes analysed"><strong>8</strong>genes analizados</li>
-           <li data-en="<strong>&gt;300</strong>seedlings grown"><strong>&gt;300</strong>plántulas cultivadas</li>
-           <li data-en="<strong>X</strong>PCR assays"><strong>X</strong>ensayos de PCR</li>
-          <ul>
         </article>
         <article class="card mid">
           <h3 data-en="Study of DprE1 inhibitors from <em>Mycobacterium tuberculosis</em>">Estudio de inhibidores de DprE1 de <em>Mycobacterium tuberculosis</em></h3>
@@ -512,4 +528,3 @@ dibujarHelice();
 </script>
 </body>
 </html>
- 
