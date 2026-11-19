@@ -10,11 +10,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
  
 <!--
-  CÓMO FUNCIONAN LAS TRADUCCIONES
-  Cada texto traducible lleva un atributo data-en con la versión en inglés.
-  Lo que escribes dentro de la etiqueta es la versión en español:
+  TRADUCCIONES
+  Cada texto lleva un atributo data-en con la versión en inglés.
+  Lo que hay dentro de la etiqueta es la versión en español:
       <h2 data-en="Profile">Perfil</h2>
-  Para añadir un texto nuevo, escribe los dos idiomas en la misma etiqueta.
+  Para añadir un texto nuevo, añadir los dos idiomas en la misma etiqueta.
 -->
  
 <style>
@@ -73,7 +73,7 @@ nav a:hover{color:var(--ink);background:var(--panel)}
 .btn.solid{background:var(--teal);border-color:var(--teal);color:#06231F}
 .btn.solid:hover{background:#7BE3D9}
  
-/* ========== 5. ADN decorativo (la hélice y la cinta se dibujan en el script del final) ========== */
+/* ========== 5. ADN decorativo (la hélice y la cinta se dibujan) ========== */
 .base-a{stroke:var(--teal);fill:var(--teal)}
 .base-t{stroke:var(--violet);fill:var(--violet)}
 .base-g{stroke:var(--amber);fill:var(--amber)}
@@ -261,6 +261,12 @@ footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem;border-top:1px 
     <div class="wrap">
       <h2 data-en="Experience">Experiencia</h2>
       <ol class="tl">
+       <li>
+          <span class="when">2024-2025</span>
+          <h3 data-en="Student Research Assistant">Alumno colaborador</h3>
+          <div class="where" data-en="Department of Biochemistry and Molecular Biology · 7 months">Departamento de Bioquímica y Biología Molecular · 7 meses</div>
+          <p data-en="Support for molecular biology assays and biochemical analysis.">Apoyo a ensayos de biología molecular y análisis bioquímico.</p>
+        </li>
         <li>
           <span class="when">2024</span>
           <h3 data-en="Extracurricular Internship">Prácticas Extracurriculares</h3>
@@ -274,6 +280,12 @@ footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem;border-top:1px 
             <li data-en="Characterisation and optimisation of bioactive compound purification methods">Caracterización y optimización de métodos de purificación de compuestos bioactivos</li>
           </ul>
         </li>
+       <li>
+          <span class="when">2023 – 2024</span>
+          <h3 data-en="Student Research Assistant">Alumno colaborador</h3>
+          <div class="where" data-en="Department of Plant Physiology · 7 months">Departamento de Fisiología Vegetal · 7 meses</div>
+          <p data-en="Support for biofertiliser and plant physiology assays.">Apoyo a ensayos de biofertilizantes y fisiología vegetal.</p>
+        </li>
         <li>
           <span class="when">2023</span>
           <h3 data-en="Curricular Internship">Prácticas Curriculares</h3>
@@ -284,18 +296,7 @@ footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem;border-top:1px 
             <li data-en="Mentoring of two master's students.">Tutorización de dos estudiantes de máster.</li>
           </ul>
         </li>
-        <li>
-          <span class="when">2024-2025</span>
-          <h3 data-en="Student Research Assistant">Alumno colaborador</h3>
-          <div class="where" data-en="Department of Biochemistry and Molecular Biology · 7 months">Departamento de Bioquímica y Biología Molecular · 7 meses</div>
-          <p data-en="Support for molecular biology assays and biochemical analysis.">Apoyo a ensayos de biología molecular y análisis bioquímico.</p>
-        </li>
-        <li>
-          <span class="when">2023 – 2024</span>
-          <h3 data-en="Student Research Assistant">Alumno colaborador</h3>
-          <div class="where" data-en="Department of Plant Physiology · 7 months">Departamento de Fisiología Vegetal · 7 meses</div>
-          <p data-en="Support for biofertiliser and plant physiology assays.">Apoyo a ensayos de biofertilizantes y fisiología vegetal.</p>
-        </li>
+        
       </ol>
     </div>
   </section>
