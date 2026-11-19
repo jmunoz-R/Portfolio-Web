@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
+ 
 <!--
   TRADUCCIONES
   Cada texto lleva un atributo data-en con la versión en inglés.
@@ -16,7 +16,7 @@
       <h2 data-en="Profile">Perfil</h2>
   Para añadir un texto nuevo, escribe los dos idiomas en la misma etiqueta.
 -->
-
+ 
 <style>
 /* ========== 1. VARIABLES (colores y fuentes; cámbialos aquí) ========== */
 :root{
@@ -35,7 +35,7 @@
   padding-top:env(safe-area-inset-top,0px);       /* respeta la zona segura del móvil */
   padding-bottom:env(safe-area-inset-bottom,0px);
 }
-
+ 
 /* ========== 2. BASE ========== */
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px));height:100%}
@@ -46,7 +46,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offs
 h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.05;margin:0}
 p{margin:0 0 1em}
 .wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto} /* contenedor centrado */
-
+ 
 /* ========== 3. CABECERA: logo, menú e selector de idioma ========== */
 header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--bg);border-bottom:1px solid var(--line)}
 header.top .wrap{display:flex;align-items:center;gap:1.5rem;height:64px;min-width:0}
@@ -60,7 +60,7 @@ nav a:hover{color:var(--ink);background:var(--panel)}
 .lang-btn:hover{color:var(--ink)}
 .lang-btn.active{background:var(--teal);color:#06231F}
 .lang-separator{color:var(--muted);font-size:.75rem}
-
+ 
 /* ========== 4. PORTADA ========== */
 .hero{padding:clamp(2.5rem,7vw,5rem) 0 clamp(2rem,4vw,3rem)}
 .hero .wrap{display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(2rem,6vw,5rem);align-items:center}
@@ -72,7 +72,7 @@ nav a:hover{color:var(--ink);background:var(--panel)}
 .btn:hover{border-color:var(--teal)}
 .btn.solid{background:var(--teal);border-color:var(--teal);color:#06231F}
 .btn.solid:hover{background:#7BE3D9}
-
+ 
 /* ========== 5. ADN decorativo (la hélice y la cinta se dibujan en el script del final) ========== */
 .base-a{stroke:var(--teal);fill:var(--teal)}
 .base-t{stroke:var(--violet);fill:var(--violet)}
@@ -90,7 +90,7 @@ nav a:hover{color:var(--ink);background:var(--panel)}
 .seq .letras{font-family:var(--mono);font-size:1rem;letter-spacing:.55em;white-space:nowrap}
 .seq i{font-style:normal}
 .seq .base-a{color:var(--teal)} .seq .base-t{color:var(--violet)} .seq .base-g{color:var(--amber)} .seq .base-c{color:var(--rose)}
-
+ 
 /* ========== 6. SECCIONES Y PERFIL ========== */
 section{padding:clamp(3.5rem,8vw,6rem) 0}
 section>.wrap>h2{font-size:clamp(2.3rem,5.5vw,3.6rem);margin-bottom:2.2rem}
@@ -99,7 +99,7 @@ section>.wrap>h2{font-size:clamp(2.3rem,5.5vw,3.6rem);margin-bottom:2.2rem}
 .about h3{font-family:var(--sans);font-size:.98rem;font-weight:700;margin-bottom:.8rem}
 .chips{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;margin:0 0 1.8rem;padding:0}
 .chips li{padding:.3rem .8rem;border:1px solid var(--line);background:var(--panel);border-radius:8px;font-family:var(--mono);font-size:.82rem;color:#C3CCE0}
-
+ 
 /* ========== 7. LÍNEAS DE TIEMPO (formación, experiencia, cursos) ========== */
 .tl{list-style:none;margin:0;padding:0 0 0 1.9rem;border-left:1px solid var(--line)}
 .tl>li{position:relative;padding-bottom:2.4rem;--dot:var(--teal)}      /* color del punto */
@@ -113,7 +113,7 @@ section>.wrap>h2{font-size:clamp(2.3rem,5.5vw,3.6rem);margin-bottom:2.2rem}
 .tl p,.tl ul{color:var(--muted);margin:0 0 .5rem;max-width:44rem}
 .tl ul{padding-left:1.1rem}
 .tl ul li{padding:0 0 .3rem}
-
+ 
 /* ========== 8. PROYECTOS (tarjetas) ========== */
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:1.6rem;display:flex;flex-direction:column;gap:.7rem}
@@ -130,19 +130,20 @@ section>.wrap>h2{font-size:clamp(2.3rem,5.5vw,3.6rem);margin-bottom:2.2rem}
 .res strong{display:block;font-family:var(--serif);font-weight:400;font-size:2.2rem;line-height:1.1;color:var(--ink)}
 .card.mid{grid-column:span 2}                                                                              /* tarjeta de 2 columnas */
 .tags{margin:auto 0 0;padding:.6rem 0 0;display:flex;flex-wrap:wrap;gap:.35rem 1rem;list-style:none;font-family:var(--mono);font-size:.78rem;color:var(--teal)}
-
+ 
 /* ========== 9. CONTACTO Y PIE ========== */
 .contact{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2rem;align-items:flex-end}
 .contact p{max-width:30rem;color:var(--muted);font-size:1.12rem;margin:0}
 .links{display:flex;flex-wrap:wrap;gap:.6rem}
 footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line)}
-
+ 
 /* ========== 10. ADAPTACIÓN A TABLET Y MÓVIL ========== */
 @media (max-width:860px){
   .hero .wrap,.about,.card.feature{grid-template-columns:1fr}
   .helix{order:-1;max-width:110px}                        /* la hélice pasa arriba y se hace pequeña */
   .grid{grid-template-columns:1fr 1fr}
-  .card.feature,.card.mid{grid-column:span 2}
+  .card.feature{grid-column:span 2}
+  .card.mid{grid-column:auto}
   header.top .wrap{gap:.6rem}
   nav{flex:1;justify-content:flex-end}
 }
@@ -161,9 +162,9 @@ footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem;border-top:1px 
 }
 </style>
 </head>
-
+ 
 <body>
-
+ 
 <!-- ========== CABECERA ========== -->
 <header class="top">
   <div class="wrap">
@@ -183,9 +184,9 @@ footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem;border-top:1px 
     </div>
   </div>
 </header>
-
+ 
 <main id="inicio">
-
+ 
   <!-- ========== PORTADA ========== -->
   <div class="hero">
     <div class="wrap">
@@ -204,13 +205,13 @@ footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem;border-top:1px 
       <figure class="helix" id="helice" role="img" aria-label="Ilustración de una doble hélice de ADN"></figure>
     </div>
   </div>
-
+ 
   <!-- Cinta decorativa de secuencia de ADN (también se genera con JavaScript) -->
   <div class="seq" aria-hidden="true">
     <code data-en="&gt;jesus_m_munoz | bioinformatics | 2026">&gt;jesus_m_munoz | bioinformatica | 2026</code>
     <div class="letras" id="secuencia"></div>
   </div>
-
+ 
   <!-- ========== PERFIL ========== -->
   <section id="perfil">
     <div class="wrap">
@@ -255,7 +256,7 @@ footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem;border-top:1px 
       </div>
     </div>
   </section>
-
+ 
   <!-- ========== FORMACIÓN ========== -->
   <!-- Para añadir una entrada, copia un bloque <li>…</li> completo -->
   <section id="formacion">
@@ -277,7 +278,7 @@ footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem;border-top:1px 
       </ol>
     </div>
   </section>
-
+ 
   <!-- ========== EXPERIENCIA (de más reciente a más antigua) ========== -->
   <section id="experiencia">
     <div class="wrap">
@@ -321,7 +322,7 @@ footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem;border-top:1px 
       </ol>
     </div>
   </section>
-
+ 
   <!-- ========== CURSOS COMPLEMENTARIOS ========== -->
   <section id="cursos">
     <div class="wrap">
@@ -363,7 +364,7 @@ footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem;border-top:1px 
       </ol>
     </div>
   </section>
-
+ 
   <!-- ========== PROYECTOS ========== -->
   <!-- card feature = tarjeta destacada · card mid = tarjeta de 2 columnas · card = 1 columna -->
   <section id="proyectos">
@@ -399,10 +400,20 @@ footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem;border-top:1px 
             <li>Drug Design</li>
           </ul>
         </article>
+        <article class="card">
+          <h3 data-en="Master's Thesis">Trabajo Fin de Máster</h3>
+          <!-- Cuando avances, amplía esta descripción: métodos, herramientas y resultados -->
+          <p data-en="Identification and characterisation of bioactive peptides in food through computational analysis.">Identificación y caracterización de péptidos bioactivos en alimentos mediante análisis computacional.</p>
+          <ul class="tags">
+            <li data-en="Bioactive peptides">Péptidos bioactivos</li>
+            <li data-en="Computational analysis">Análisis computacional</li>
+            <li data-en="In progress">En curso</li>
+          </ul>
+        </article>
       </div>
     </div>
   </section>
-
+ 
   <!-- ========== CONTACTO ========== -->
   <section id="contacto">
     <div class="wrap">
@@ -417,21 +428,21 @@ footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem;border-top:1px 
       </div>
     </div>
   </section>
-
+ 
 </main>
-
+ 
 <footer>
   <div class="wrap" data-en="© 2026 Jesús Manuel Muñoz Vázquez. All rights reserved.">© 2026 Jesús Manuel Muñoz Vázquez. Todos los derechos reservados.</div>
 </footer>
-
+ 
 <script>
 /* ========== A. SELECTOR DE IDIOMA ========== */
 // Todos los elementos que tienen data-en son traducibles.
 const textos = document.querySelectorAll("[data-en]");
-
+ 
 // Guardamos el texto español original de cada uno en data-es.
 textos.forEach(function (el) { el.dataset.es = el.innerHTML; });
-
+ 
 // Título y descripción de la pestaña, en cada idioma.
 const metadatos = {
   es: {
@@ -443,36 +454,36 @@ const metadatos = {
     descripcion: "Portfolio of Jesús Manuel Muñoz Vázquez, Biology graduate focused on bioinformatics and computational drug discovery."
   }
 };
-
+ 
 function cambiarIdioma(idioma) {
   // 1. Cada texto toma su versión en el idioma elegido ("es" o "en").
   textos.forEach(function (el) { el.innerHTML = el.dataset[idioma]; });
-
+ 
   // 2. Actualizamos el idioma de la página, el título y la descripción.
   document.documentElement.lang = idioma;
   document.title = metadatos[idioma].titulo;
   document.querySelector('meta[name="description"]').content = metadatos[idioma].descripcion;
-
+ 
   // 3. Marcamos el botón activo (ES o EN).
   document.querySelectorAll(".lang-btn").forEach(function (boton) {
     const activo = boton.dataset.lang === idioma;
     boton.classList.toggle("active", activo);
     boton.setAttribute("aria-pressed", String(activo));
   });
-
+ 
   // 4. Recordamos la elección para la próxima visita.
   try { localStorage.setItem("portfolio-language", idioma); } catch (error) {}
 }
-
+ 
 document.querySelectorAll(".lang-btn").forEach(function (boton) {
   boton.addEventListener("click", function () { cambiarIdioma(boton.dataset.lang); });
 });
-
+ 
 let idiomaGuardado = "es";
 try { idiomaGuardado = localStorage.getItem("portfolio-language") || "es"; } catch (error) {}
 if (idiomaGuardado === "en") cambiarIdioma("en");
-
-
+ 
+ 
 /* ========== B. DECORACIÓN: cinta de secuencia de ADN ========== */
 // Cada letra se pinta con el color de su base (A, T, G o C). Puedes cambiar la secuencia.
 const secuencia = "TATGAAATCCGCCGGTTTAGCGCGAACTGTCCAAGGGCCAAGCAAGCGCGACGTACATGTTCCCATCCGTCGCGCTTATTTTACTGGATCGGTACCCCCACCATATCTAG";
@@ -480,22 +491,22 @@ document.getElementById("secuencia").innerHTML = secuencia
   .split("")
   .map(function (letra) { return '<i class="base-' + letra.toLowerCase() + '">' + letra + "</i>"; })
   .join("");
-
-
+ 
+ 
 /* ========== C. DECORACIÓN: doble hélice de ADN ========== */
 // Dibujamos dos hebras onduladas (senos) y barras que las unen (pares de bases).
 function dibujarHelice() {
   const ALTO = 560, CENTRO = 110, RADIO = 76, VUELTAS = 2.5;
   const PAREJAS = ["a-t", "g-c", "t-a", "c-g"];
   const angulo = function (y) { return (y / ALTO) * VUELTAS * 2 * Math.PI; };
-
+ 
   // Puntos de las dos hebras (una cada 5 píxeles de altura).
   const hebra1 = [], hebra2 = [];
   for (let y = 0; y <= ALTO; y += 5) {
     hebra1.push((CENTRO + RADIO * Math.sin(angulo(y))).toFixed(1) + "," + y);
     hebra2.push((CENTRO - RADIO * Math.sin(angulo(y))).toFixed(1) + "," + y);
   }
-
+ 
   // Barras horizontales (una cada 18 píxeles), mitad de un color y mitad de otro.
   let barras = "";
   for (let y = 14; y < ALTO; y += 18) {
@@ -513,7 +524,7 @@ function dibujarHelice() {
         '<circle class="base-' + par[1] + '" cx="' + x2 + '" cy="' + y + '" r="' + r2 + '"/>' +
       "</g>";
   }
-
+ 
   document.getElementById("helice").innerHTML =
     '<svg viewBox="0 0 220 560">' +
       '<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="560" gradientUnits="userSpaceOnUse">' +
@@ -528,3 +539,4 @@ dibujarHelice();
 </script>
 </body>
 </html>
+ 
