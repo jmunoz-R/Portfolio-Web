@@ -119,9 +119,15 @@ section>.wrap>h2{font-size:clamp(2.3rem,5.5vw,3.6rem);margin-bottom:2.2rem}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:1.6rem;display:flex;flex-direction:column;gap:.7rem}
 .card h3{font-size:1.65rem}
 .card p{color:var(--muted);margin:0;font-size:.98rem}
-.card.feature{grid-column:span 3;background:var(--panel2);border-radius:22px;padding:clamp(1.6rem,4vw,2.8rem)} /* tarjeta destacada, ancho completo */
+.card.feature{grid-column:span 3;display:grid;grid-template-columns:1.2fr 1fr;gap:2.2rem;background:var(--panel2);border-radius:22px;padding:clamp(1.6rem,4vw,2.8rem)}
+.card.feature>div{display:flex;flex-direction:column;gap:.7rem}
 .card.feature h3{font-size:clamp(2rem,4vw,2.9rem)}
 .card.feature p{font-size:1.05rem}
+.res{align-self:center;margin:0;padding:0;list-style:none;display:grid;gap:1.2rem}
+.res li{border-left:2px solid var(--teal);padding-left:1rem;color:var(--muted);font-size:.95rem}
+.res li:nth-child(2){border-color:var(--violet)}
+.res li:nth-child(3){border-color:var(--amber)}
+.res strong{display:block;font-family:var(--serif);font-weight:400;font-size:2.2rem;line-height:1.1;color:var(--ink)}
 .card.mid{grid-column:span 2}                                                                              /* tarjeta de 2 columnas */
 .tags{margin:auto 0 0;padding:.6rem 0 0;display:flex;flex-wrap:wrap;gap:.35rem 1rem;list-style:none;font-family:var(--mono);font-size:.78rem;color:var(--teal)}
  
@@ -134,6 +140,7 @@ footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem;border-top:1px 
 /* ========== 10. ADAPTACIÓN A TABLET Y MÓVIL ========== */
 @media (max-width:860px){
   .hero .wrap,.about{grid-template-columns:1fr}
+  .card.feature: .hero .wrap,.about,.card.feature{grid-template-columns:1fr}
   .helix{order:-1;max-width:110px}                        /* la hélice pasa arriba y se hace pequeña */
   .grid{grid-template-columns:1fr 1fr}
   .card.feature,.card.mid{grid-column:span 2}
@@ -350,6 +357,7 @@ footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem;border-top:1px 
       <h2 data-en="Projects">Proyectos</h2>
       <div class="grid">
         <article class="card feature">
+         <div>
           <h3 data-en="Bachelor's Thesis">Trabajo de Fin de Grado</h3>
           <p data-en="Effect of the <em>FaNPR3.2</em> transgene on the expression profile of defence genes in wild-type and double-mutant <em>Arabidopsis</em>. The study examined the effect of the strawberry <em>FaNPR3.2</em> gene on the expression of its orthologues (<em>Atnpr3/Atnpr4</em>) in <em>Arabidopsis thaliana</em>.">Efecto del transgén <em>FaNPR3.2</em> en el perfil de expresión de genes de defensa de <em>Arabidopsis</em> WT y doble mutante. El trabajo estudió el efecto del gen <em>FaNPR3.2</em> de fresa sobre la expresión de sus ortólogos (<em>Atnpr3/Atnpr4</em>) en <em>Arabidopsis thaliana</em>.</p>
           <ul class="tags">
@@ -360,6 +368,12 @@ footer{padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem;border-top:1px 
             <li data-en="1D Electrophoresis">Electroforesis 1D</li>
             <li data-en="Spectrophotometry">Espectrofotometría</li>
           </ul>
+         </div>
+         <ul class="res">
+           <li data-en="<strong>8</strong>genes analysed"><strong>8</strong>genes analizados</li>
+           <li data-en="<strong>&gt;300</strong>seedlings grown"><strong>&gt;300</strong>plántulas cultivadas</li>
+           <li data-en="<strong>X</strong>PCR assays"><strong>X</strong>ensayos de PCR</li>
+          <ul>
         </article>
         <article class="card mid">
           <h3 data-en="Study of DprE1 inhibitors from <em>Mycobacterium tuberculosis</em>">Estudio de inhibidores de DprE1 de <em>Mycobacterium tuberculosis</em></h3>
